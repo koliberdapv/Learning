@@ -24,7 +24,7 @@ const author = 'some author';
 const statement = 'some statement';
 
 const quote = highlight`Here is the ${statement} by ${author} and it could not be more true`;
-console.log(quote);
+// console.log(quote);
 
 const result = document.getElementById('result');
 result.innerHTML = quote;
