@@ -1,6 +1,6 @@
 // Rest operator
 // gathers/collects the items to an array
-// we can use it as a parameter
+// we can use it as a parameter, but not as an an argument
 
 // arrays
 const fruit = ['apple', 'orange', 'lemon', 'pear'];
