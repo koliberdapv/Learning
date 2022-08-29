@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --primary-light-hsl: 200, 100%, 91%;
+  --primary-dark-hsl: 200, 100%, 6%;
+  --primary-hsl: 200, 100%, 50%;
+  --success-hsl: 100, 60%, 50%;
+  --error-hsl: 0, 60%, 50%;
+}
+.page {
+  background-image: url(./background-image.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-container {
+  --color: hsl(var(--primary-dark-hsl), 0.7);
+  background-color: var(--color);
+  box-shadow: 0 0 15px 0 var(--color);
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+  font-weight: lighter;
+}
+.form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form label {
+  text-transform: capitalize;
+  color: white;
+}
+
+.input-control {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.form input {
+  padding: 0.5em;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: hsl(var(--primary-light-hsl), 0.3);
+}
+
+.input-control.success input {
+  box-shadow: 0 0 0 1px hsl(var(--success-hsl));
+}
+
+.input-control.error input {
+  box-shadow: 0 0 0 1px hsl(var(--error-hsl));
+}
+
+.input-control .msg {
+  /* display: none; */
+  font-size: 0.75rem;
+}
+
+.input-control.success .msg {
+  color: hsl(var(--success-hsl));
+}
+
+.input-control.error .msg {
+  color: hsl(var(--error-hsl));
+}
+.input-control input:focus {
+  box-shadow: 0 0 0 1px hsl(var(--primary-hsl));
+}
+
+.login-btn {
+  padding: 0.5em 1em;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  color: white;
+  background-color: hsl(var(--primary-hsl), 0.3);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px hsl(var(--primary-hsl));
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: hsl(var(--primary-hsl), 0.4);
+}
