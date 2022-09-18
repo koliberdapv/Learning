@@ -15,7 +15,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://frontend-mentor-challendge-order-summary.netlify.app]
+- Live Site URL: [https://frontend-mentor-challendge-order-sum.netlify.app]
 
 ### Built with
 
