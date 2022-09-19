@@ -20,7 +20,7 @@
 }
 
 body {
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   font-family: var(--ff-primary);
   background-color: var(--clr-primary-ligth);
@@ -30,7 +30,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  /* width: 90%; */
   min-width: 355px;
   max-width: 460px;
   margin: auto;
