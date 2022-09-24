@@ -12,6 +12,8 @@
   --fs-heading: 25px;
 
   --clr-orange: hsl(25, 97%, 53%);
+  --clr-orange-light: hsla(25, 71%, 57%, 0.8);
+
   --clr-white: hsl(0, 0%, 100%);
   --clr-light-grey: hsl(217, 12%, 63%);
   --clr-medium-gray: hsl(216, 12%, 54%);
@@ -54,7 +56,8 @@ h2 {
 p {
   width: 100%;
   font-weight: var(--fw-regular);
-  color: var(--clr-medium-gray);
+  color: var(--clr-light-grey);
+  line-height: 25px;
 }
 
 .numbers {
@@ -92,7 +95,7 @@ p {
   background-color: var(--clr-orange);
   width: 100%;
   border: none;
-  padding: 0.9rem 0;
+  padding: 1rem 0;
   border-radius: var(--br-btn);
   letter-spacing: 2px;
   cursor: pointer;
@@ -102,4 +105,30 @@ p {
 .btn:hover {
   background-color: var(--clr-white);
   color: var(--clr-orange);
+}
+
+.rating {
+  color: var(--clr-orange-light);
+  background-color: var(--clr-medium-dark-blue);
+  padding: 0.5rem;
+  width: 11rem;
+  margin-inline: auto;
+  border-radius: var(--br-btn);
+}
+
+.img {
+  margin-inline: auto;
+}
+
+.result {
+  text-align: center;
+}
+
+.result h2 {
+  margin-top: 0.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.result p {
+  margin-bottom: 1rem;
 }

@@ -8,6 +8,7 @@ const numbers = get('.numbers');
 const containers = document.querySelectorAll('.container');
 const btn = get('.btn');
 const info = get('.info');
+// const active = get('active');
 
 const removeActive = () => {
   containers.forEach((item) => {
@@ -23,4 +24,12 @@ numbers.addEventListener('click', function (e) {
   }
 });
 
-btn.addEventListener('click', function () {});
+const addResult = () => {
+  info.classList.add('result');
+};
+
+btn.addEventListener('click', function () {
+  addResult();
+  const active = get('.active');
+  console.log(active);
+});
