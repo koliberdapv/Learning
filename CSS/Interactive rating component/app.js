@@ -4,32 +4,41 @@ const get = (selection) => {
   throw new Error('no element selected');
 };
 
+const info = get('.info');
 const numbers = get('.numbers');
 const containers = document.querySelectorAll('.container');
 const btn = get('.btn');
-const info = get('.info');
-// const active = get('active');
 
-const removeActive = () => {
+const removeClassActive = () => {
   containers.forEach((item) => {
     item.classList.remove('active');
   });
 };
 
+const addClassResult = () => {
+  info.classList.add('result');
+};
+
 numbers.addEventListener('click', function (e) {
   const current = e.target;
   if (current !== numbers) {
-    removeActive();
+    removeClassActive();
     current.classList.add('active');
   }
 });
 
-const addResult = () => {
-  info.classList.add('result');
-};
-
 btn.addEventListener('click', function () {
-  addResult();
   const active = get('.active');
-  console.log(active);
+  const result = active.textContent;
+
+  if (active) {
+    addClassResult();
+    info.innerHTML = `<img class="img" src="./images/illustration-thank-you.svg" alt="" />
+    <div class="rating">You selected ${result} out of 5</div>
+    <h2 id="heading">Thank you!</h2>
+    <p>
+    We appreciate you taking the time to give a rating. <br class="br">If you ever need
+    more support, don't hesitate to <br class="br">get in touch!
+    </p>`;
+  }
 });

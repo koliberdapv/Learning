@@ -24,6 +24,8 @@
   --br-small: 10px;
   --br-circle: 50%;
   --br-btn: 50px;
+
+  --trasnition: 0.3s;
 }
 
 body {
@@ -32,7 +34,8 @@ body {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
   background-color: var(--clr-very-dark-blue);
   display: grid;
   place-content: center;
@@ -43,20 +46,20 @@ section {
   color: var(--clr-white);
   background-color: var(--clr-dark-blue);
   border-radius: var(--br-small);
-  padding: 2rem;
   display: grid;
   gap: 1.5rem;
+  padding: 2rem;
 }
 
 h2 {
-  font-weight: var(--fw-regular);
   font-size: var(--fs-heading);
+  font-weight: var(--fw-regular);
 }
 
 p {
   width: 100%;
-  font-weight: var(--fw-regular);
   color: var(--clr-light-grey);
+  font-weight: var(--fw-regular);
   line-height: 25px;
 }
 
@@ -68,12 +71,12 @@ p {
 .container {
   width: 2.75rem;
   height: 2.75rem;
+  color: var(--clr-medium-gray);
   background-color: var(--clr-medium-dark-blue);
+  border-radius: var(--br-circle);
   display: grid;
   place-content: center;
-  color: var(--clr-medium-gray);
-  border-radius: var(--br-circle);
-  transition: 0.3s;
+  transition: var(--trasnition);
 }
 
 .container:not(.star) {
@@ -81,8 +84,8 @@ p {
 }
 
 .container:not(.star, .active):hover {
-  background-color: var(--clr-orange);
   color: var(--clr-white);
+  background-color: var(--clr-orange);
 }
 
 .active {
@@ -93,27 +96,26 @@ p {
 .btn {
   color: var(--clr-white);
   background-color: var(--clr-orange);
-  width: 100%;
   border: none;
-  padding: 1rem 0;
   border-radius: var(--br-btn);
+  padding: 1rem 0;
   letter-spacing: 2px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--trasnition);
 }
 
 .btn:hover {
-  background-color: var(--clr-white);
   color: var(--clr-orange);
+  background-color: var(--clr-white);
 }
 
 .rating {
+  width: 11rem;
   color: var(--clr-orange-light);
   background-color: var(--clr-medium-dark-blue);
-  padding: 0.5rem;
-  width: 11rem;
-  margin-inline: auto;
   border-radius: var(--br-btn);
+  margin-inline: auto;
+  padding: 0.5rem;
 }
 
 .img {
@@ -131,4 +133,23 @@ p {
 
 .result p {
   margin-bottom: 1rem;
+}
+
+.br {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .info {
+    width: 400px;
+  }
+  .br {
+    display: block;
+  }
+  .rating {
+    width: 12.5rem;
+  }
+  h2 {
+    font-weight: var(--fw-bold);
+  }
 }
