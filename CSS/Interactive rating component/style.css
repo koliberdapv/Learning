@@ -21,7 +21,7 @@
   --clr-very-dark-blue: hsl(216, 12%, 8%);
   --clr-medium-dark-blue: hsl(213, 19%, 22%);
 
-  --br-small: 10px;
+  --br-small: 30px;
   --br-circle: 50%;
   --br-btn: 50px;
 
@@ -33,7 +33,7 @@ body {
   font-family: var(--ff-primary);
 }
 
-section {
+main {
   min-height: 100vh;
   min-width: 100vw;
   background-color: var(--clr-very-dark-blue);
@@ -77,6 +77,7 @@ p {
   display: grid;
   place-content: center;
   transition: var(--trasnition);
+  border: none;
 }
 
 .container:not(.star) {
