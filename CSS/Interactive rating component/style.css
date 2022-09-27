@@ -78,6 +78,7 @@ p {
   place-content: center;
   transition: var(--trasnition);
   border: none;
+  font-size: var(--fs-regular);
 }
 
 .container:not(.star) {
