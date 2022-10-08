@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: 'Poppins', sans-serif;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --fs-regular: 1rem;
+  --fs-heading: 1.75rem;
+  --fs-input: 0.9rem;
+  --fs-pg: 0.7rem;
+  --fs-error: 0.6rem;
+
+  --lh-regular: 1.5rem;
+
+  --br-regular: 10px;
+  --br-input: 5px;
+  --spacing: 1.35px;
+
+  --clr-red: hsl(0, 100%, 74%);
+  --clr-green: hsl(154, 59%, 51%);
+  --clr-green-dark: hsl(154, 58%, 43%);
+  --clr-blue: hsl(248, 32%, 49%);
+  --clr-dark-blue: hsl(249, 10%, 26%);
+  --clr-greish-blue: hsl(246, 25%, 77%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --clr-shadow: hsl(249, 10%, 26%, 0.3);
+  --shadow: 0 8px 0 0 var(--clr-shadow);
+  --shadow-green: 0 4px 0 0 var(--clr-green-dark);
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-400);
+  min-height: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::after {
+  content: ' ';
+  background-color: var(--clr-red);
+  position: absolute;
+  isolation: isolate;
+  inset: 0;
+  z-index: -2;
+}
+
+body::before {
+  content: ' ';
+  inset: 0;
+  position: absolute;
+  background-image: url(./images/bg-intro-mobile.png);
+  z-index: -1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  color: var(--clr-white);
+  font-weight: var(--fw-600);
+  font-size: var(--fs-heading);
+  max-width: 15rem;
+  margin: 1rem auto 2rem;
+}
+
+h2 {
+  color: var(--clr-white);
+  font-size: var(--fs-regular);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--spacing);
+  line-height: var(--lh-regular);
+}
+
+section {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: var(--br-regular);
+  padding: 1.25rem;
+  padding: 1rem;
+  color: var(--clr-white);
+  font-size: var(--fs-regular);
+  line-height: var(--lh-regular);
+  letter-spacing: var(--spacing);
+  cursor: pointer;
+}
+
+.btn span {
+  font-weight: var(--fw-600);
+}
+
+.cta-btn {
+  background-color: var(--clr-blue);
+  box-shadow: var(--shadow);
+}
+
+.form {
+  background-color: var(--clr-white);
+  border-radius: var(--br-regular);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+}
+
+input {
+  width: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--clr-greish-blue);
+  border-radius: var(--br-input);
+  font-weight: var(--fw-600);
+  font-size: var(--fs-input);
+  color: var(--clr-greish-blue);
+  letter-spacing: var(--spacing);
+  outline: none;
+}
+
+.form p:not(:last-child) {
+  text-align: right;
+  font-size: var(--fs-error);
+  margin-top: -0.75rem;
+  font-style: italic;
+  color: var(--clr-red);
+}
+
+.hidden {
+  display: none;
+}
+
+.form-btn {
+  background-color: var(--clr-green);
+  box-shadow: var(--shadow-green);
+}
+
+.form p:last-child {
+  color: var(--clr-greish-blue);
+  font-size: var(--fs-pg);
+  letter-spacing: 0.5px;
+}
+
+.form p:last-child a {
+  color: var(--clr-red);
+  text-decoration: none;
+  font-weight: var(--fw-600);
+  line-height: var(--lh-regular);
+}
