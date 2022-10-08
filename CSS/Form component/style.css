@@ -16,7 +16,7 @@
   --fs-heading: 1.75rem;
   --fs-input: 0.9rem;
   --fs-pg: 0.7rem;
-  --fs-error: 0.6rem;
+  --fs-error: 0.7rem;
 
   --lh-regular: 1.5rem;
 
@@ -133,37 +133,83 @@ input {
   border-radius: var(--br-input);
   font-weight: var(--fw-600);
   font-size: var(--fs-input);
-  color: var(--clr-greish-blue);
   letter-spacing: var(--spacing);
   outline: none;
 }
 
-.form p:not(:last-child) {
+.input-wrapper p {
   text-align: right;
   font-size: var(--fs-error);
-  margin-top: -0.75rem;
+  font-weight: var(--fw-500);
   font-style: italic;
   color: var(--clr-red);
-}
-
-.hidden {
+  margin-top: 0.5rem;
   display: none;
 }
 
 .form-btn {
   background-color: var(--clr-green);
   box-shadow: var(--shadow-green);
+  position: relative;
 }
 
-.form p:last-child {
+.terms {
   color: var(--clr-greish-blue);
   font-size: var(--fs-pg);
   letter-spacing: 0.5px;
 }
 
-.form p:last-child a {
+.terms a {
   color: var(--clr-red);
   text-decoration: none;
   font-weight: var(--fw-600);
   line-height: var(--lh-regular);
+}
+
+.error {
+  position: relative;
+}
+
+.error input {
+  border: 2px solid var(--clr-red);
+}
+
+.error p {
+  display: block;
+}
+
+.error:after {
+  content: '';
+  background-image: url(./images/icon-error.svg);
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5em;
+  background-size: cover;
+  top: 1.1rem;
+  right: 2rem;
+}
+
+.error input::placeholder {
+  color: transparent;
+}
+
+.error:nth-child(3) input::placeholder {
+  color: var(--clr-red);
+}
+
+input:focus {
+  border: 1px solid black;
+}
+
+.success {
+  max-width: 20rem;
+  margin-inline: auto;
+  margin-top: 10rem;
+  background: var(--clr-white);
+  border-radius: var(--br-regular);
+  color: var(--clr-blue);
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
