@@ -30,6 +30,7 @@
   --clr-blue: hsl(248, 32%, 49%);
   --clr-dark-blue: hsl(249, 10%, 26%);
   --clr-greish-blue: hsl(246, 25%, 77%);
+  --clr-greish-blue-light: hsl(246, 25%, 77%, 0.5);
   --clr-white: hsl(0, 0%, 100%);
 
   --clr-shadow: hsl(249, 10%, 26%, 0.3);
@@ -98,8 +99,8 @@ section {
   width: 100%;
   border: none;
   border-radius: var(--br-regular);
+  padding: 1.5rem;
   padding: 1.25rem;
-  padding: 1rem;
   color: var(--clr-white);
   font-size: var(--fs-regular);
   line-height: var(--lh-regular);
@@ -129,12 +130,17 @@ section {
 input {
   width: 100%;
   padding: 1.25rem;
-  border: 1px solid var(--clr-greish-blue);
+  border: 1px solid var(--clr-greish-blue-light);
+  color: var(--clr-dark-blue);
   border-radius: var(--br-input);
   font-weight: var(--fw-600);
   font-size: var(--fs-input);
   letter-spacing: var(--spacing);
   outline: none;
+}
+
+.input::placeholder {
+  color: var(--clr-dark-blue);
 }
 
 .input-wrapper p {
@@ -207,9 +213,43 @@ input:focus {
   margin-top: 10rem;
   background: var(--clr-white);
   border-radius: var(--br-regular);
+  font-weight: var(--fw-600);
   color: var(--clr-blue);
   height: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+@media screen and (min-width: 40em) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  main {
+    flex-direction: row;
+    width: 1000px;
+  }
+
+  article {
+    max-width: 500px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+  }
+
+  h1 {
+    margin: 0 0 2rem;
+    font-size: 3rem;
+    max-width: 25rem;
+  }
+
+  section {
+    max-width: 600px;
+    width: 100%;
+  }
 }
