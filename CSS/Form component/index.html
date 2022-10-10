@@ -40,6 +40,7 @@
           <div class="input-wrapper">
             <input
               type="text"
+              name="first-name"
               class="input first-name"
               placeholder="First Name"
             />
@@ -49,6 +50,7 @@
           <div class="input-wrapper">
             <input
               type="text"
+              name="last-name"
               class="input last-name"
               placeholder="Last Name"
             />
@@ -58,8 +60,10 @@
           <div class="input-wrapper">
             <input
               type="email"
+              name="email"
               class="input email"
               placeholder="Email Address"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             />
             <p>Looks like this is not an email</p>
           </div>
@@ -67,6 +71,7 @@
           <div class="input-wrapper">
             <input
               type="password"
+              name="password"
               class="input password"
               placeholder="Password"
             />

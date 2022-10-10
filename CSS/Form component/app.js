@@ -3,7 +3,6 @@ const form = document.querySelector('.form');
 const inputs = document.querySelectorAll('.input');
 const main = document.querySelector('.main');
 const email = document.querySelector('.email');
-console.log(email);
 
 const submit = () => {
   let count = 0;
@@ -16,7 +15,6 @@ const submit = () => {
       count++;
     }
   });
-  console.log(count);
 
   if (count === 4) {
     main.innerHTML = `<h2 class="success">The subscription has been ordered</h2>`;
