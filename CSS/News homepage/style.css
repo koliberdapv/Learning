@@ -40,29 +40,33 @@ body {
   font-weight: var(--fw-400);
   position: relative;
 }
+p {
+  font-size: var(--fs-paragraph);
+}
 
 main {
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  max-width: 400px;
+  margin-inline: auto;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-bottom: 2rem; */
 }
 
 .links-wrapper {
-  gap: 1rem;
+  gap: 2.5rem;
   align-items: center;
   display: none;
+  letter-spacing: var(--letter-spacing);
 }
-
-.show-links {
-  display: flex;
+.links-wrapper a:hover {
+  color: var(--clr-soft-red);
 }
 
 li {
@@ -136,47 +140,62 @@ main:has(aside):has(.show-aside)::after {
 }
 
 .hero {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-info {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.img-desktop {
+  display: none;
 }
 
 h1 {
+  padding-top: 1.5rem;
   font-size: var(--fs-h1);
   font-weight: var(--fw-800);
   line-height: 3rem;
   letter-spacing: 1px;
-
-  /* font-family: var(--ff-main); */
+}
+.br {
+  display: none;
 }
 
 .hero p {
-  color: var(--clr-grayish-blue);
   color: var(--clr-dark-grayish-blue);
-  letter-spacing: var(--letter-spacing);
-  line-height: 1.8rem;
+  padding-right: 2rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero-btn {
   width: fit-content;
-  padding: 1.25rem 2.5rem;
+  padding: 1rem 2.5rem;
   background-color: var(--clr-soft-red);
   border: none;
   color: var(--clr-white);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing);
+  letter-spacing: 3px;
   font-size: var(--fs-h4);
   font-weight: var(--fw-400);
+}
+.hero-btn:hover {
+  cursor: pointer;
+  background-color: var(--clr-dark-grayish-blue);
 }
 
 .news {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
   gap: 2rem;
   background-color: var(--clr-dark-grayish-blue);
   background-color: var(--clr-very-dark-blue);
   padding: 2rem 1rem;
+  margin-bottom: 1rem;
 }
 
 .news h2 {
@@ -189,6 +208,10 @@ h1 {
   color: var(--clr-white);
   font-size: var(--fs-h3);
   font-family: var(--ff-main);
+}
+.news h3:hover {
+  cursor: pointer;
+  color: var(--clr-soft-orange);
 }
 
 .news p {
@@ -208,35 +231,23 @@ h1 {
 }
 
 .suggestions {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  gap: 1rem;
 }
 
 .suggestion-wrapper {
-  display: flex;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+  gap: 1rem;
 }
 
-.img-wrapper {
-  /* width: 100%; */
-  /* height: 6rem;
-  width: 6rem; */
-  width: 35%;
-}
 .img-wrapper img {
-  /* object-fit: contain;
-  object-fit: inherit;
-  object-fit: cover; */
-  /* width: 30%; */
   width: 100%;
+  height: 100%;
 }
 .suggestion-info {
-  display: flex;
-  flex-direction: column;
-  /* gap: 1rem; */
-  width: 65%;
-  justify-content: space-between;
+  display: grid;
+  align-content: space-between;
 }
 
 .suggestion-info span {
@@ -250,9 +261,86 @@ h1 {
   font-size: var(--fs-h4);
 }
 
+.suggestion-info h4:hover {
+  cursor: pointer;
+  color: var(--clr-soft-red);
+}
 .suggestion-info p {
   color: var(--clr-dark-grayish-blue);
   color: var(--clr-grayish-blue);
   font-size: var(--fs-paragraph);
   line-height: 1.8rem;
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    max-width: 1150px;
+    margin-inline: auto;
+  }
+  .open-menu-btn {
+    display: none;
+  }
+  .links-wrapper {
+    display: flex;
+  }
+  .img-desktop {
+    display: block;
+  }
+  .img-phone {
+    display: none;
+  }
+  .suggestions {
+    flex-direction: row;
+  }
+  .suggestions {
+    grid-template-columns: repeat(3, auto);
+  }
+  .grid-area-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+  }
+  h1 {
+    font-size: 50px;
+    line-height: 3.5rem;
+  }
+
+  /* clear this */
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    align-content: space-between;
+    gap: 0;
+  }
+
+  .hero-img-wrapper {
+    grid-column: span 2;
+    padding-right: 1.4rem;
+  }
+  .hero-img-wrapper img {
+    height: 100%;
+  }
+  .hero-info {
+    padding: 1.5rem 3rem 0 0;
+    margin-bottom: 0;
+  }
+
+  .img-desktop {
+    display: block;
+  }
+
+  .hero p {
+    color: var(--clr-dark-grayish-blue);
+    line-height: 1.5rem;
+    margin-bottom: 0;
+  }
+  .br {
+    display: block;
+  }
+
+  .hero-btn {
+    padding: 0 2.5rem;
+  }
+  .news {
+    margin-bottom: 0;
+  }
 }
