@@ -25,13 +25,16 @@
       <header class="notifications-header">
         <h1>
           Notifications
-          <span>3</span>
+          <span class="notifications-counter">3</span>
         </h1>
         <button class="header-btn">Mark all as read</button>
       </header>
 
       <section class="notifications-wrapper">
-        <div class="notification unchecked">
+        <div class="loading">
+          <h2>Loading...</h2>
+        </div>
+        <!-- <div class="notification unchecked">
           <div class="avatar-wrapper">
             <img src="./assets/images/avatar-mark-webber.webp" alt="person" />
           </div>
@@ -61,7 +64,7 @@
           </div>
         </div>
 
-        <div class="notification">
+        <div class="notification unchecked">
           <div class="avatar-wrapper">
             <img
               src="./assets/images/avatar-jacob-thompson.webp"
@@ -102,7 +105,7 @@
           </div>
         </div>
 
-        <div class="notification refers-to-post">
+        <div class="notification refers-to-post unchecked">
           <div class="avatar-wrapper">
             <img
               src="./assets/images/avatar-kimberly-smith.webp"
@@ -123,7 +126,7 @@
           </div>
         </div>
 
-        <div class="notification">
+        <div class="notification unchecked">
           <div class="avatar-wrapper">
             <img
               src="./assets/images/avatar-nathan-peterson.webp"
@@ -143,7 +146,7 @@
           </div>
         </div>
 
-        <div class="notification">
+        <div class="notification unchecked">
           <div class="avatar-wrapper">
             <img src="./assets/images/avatar-anna-kim.webp" alt="person" />
           </div>
@@ -156,10 +159,10 @@
             </div>
             <p class="time">2 weeks ago</p>
           </div>
-        </div>
+        </div> -->
       </section>
     </main>
 
-    <script src="./app.js"></script>
+    <script src="./app.js" type="module"></script>
   </body>
 </html>

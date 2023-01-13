@@ -1,9 +1,7 @@
 import React from 'react';
-import data from './data';
 
 const Notification = ({ info }) => {
   const {
-    id,
     name,
     image,
     action,
@@ -14,7 +12,11 @@ const Notification = ({ info }) => {
     post,
   } = info;
   return (
-    <div className={`${post ? 'refers-to-post notification' : 'notification'}`}>
+    <div
+      className={`${
+        post ? 'refers-to-post notification' : 'notification'
+      } unchecked`}
+    >
       <div className="avatar-wrapper">
         <img src={image} alt="person" />
       </div>
