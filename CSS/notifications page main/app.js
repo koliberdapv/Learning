@@ -1,9 +1,18 @@
 import data from './data.js';
 
+let storageItem = localStorage.getItem('notifications');
+if (storageItem) {
+  storageItem = JSON.parse(localStorage.getItem('notifications'));
+} else {
+  storageItem = data;
+}
+
+localStorage.setItem('notifications', JSON.stringify(storageItem));
+
 const notificationsWrapper = document.querySelector('.notifications-wrapper');
 
 notificationsWrapper.innerHTML = `
- ${data
+ ${storageItem
    .map((item) => {
      const {
        name,
@@ -45,17 +54,41 @@ notificationsWrapper.innerHTML = `
 `;
 
 const notifications = document.querySelectorAll('.notification');
+const unchecked = document.querySelectorAll('.unchecked');
 const notificationsCounter = document.querySelector('.notifications-counter');
 const markAllAsRead = document.querySelector('.header-btn');
+
+if (unchecked.length > 0) {
+  notificationsCounter.textContent = unchecked.length;
+} else {
+  notificationsCounter.style.display = 'none';
+}
 
 notifications.forEach((notification, index) => {
   notification.addEventListener('mouseover', () => {
     notification.classList.remove('unchecked');
+    storageItem[index].unchecked = false;
+    localStorage.setItem('notifications', JSON.stringify(storageItem));
+    decreaseCounter();
   });
 });
 
 markAllAsRead.addEventListener('click', () => {
-  notifications.forEach((notification) => {
+  notifications.forEach((notification, index) => {
     notification.classList.remove('unchecked');
+    storageItem[index].unchecked = false;
+    notificationsCounter.style.display = 'none';
   });
+  localStorage.setItem('notifications', JSON.stringify(storageItem));
 });
+
+function decreaseCounter() {
+  let numbers = storageItem.filter((item) => {
+    return item.unchecked;
+  });
+  if (numbers.length > 0) {
+    notificationsCounter.textContent = numbers.length;
+  } else {
+    notificationsCounter.style.display = 'none';
+  }
+}
