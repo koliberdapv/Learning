@@ -1,23 +1,29 @@
-const getItem = (item) => {
-  const newItem = document.querySelector(item);
-  if (newItem) {
-    return newItem;
-  } else {
-    console.log(`there is no element ${item}`);
-  }
-};
+import getItem from './src/getItem.js';
+import getItemID from './src/getItemId.js';
+import validateName from './src/validateName.js';
+import validateCardNumber from './src/validateCardNumber.js';
+import validateMonth from './src/validateMonth.js';
+import validateYear from './src/validateYear.js';
+import validateCvc from './src/validateCvc.js';
+import customerData from './src/customerData.js';
 
-const getItemID = (item) => {
-  const newItem = document.getElementById(item);
-  if (newItem) {
-    return newItem;
-  } else {
-    console.log(`there is no element ${item}`);
-  }
-};
-
-const customerNameInput = getItemID('customer-name');
-const customerName = getItem('.customer-name');
+export const customerNameInput = getItemID('customer-name');
+export const customerName = getItem('.customer-name');
+export const cardNumberInput = getItemID('card-number');
+export const cardNubmer = getItem('.card-number');
+export const monthInput = getItemID('month');
+export const month = getItem('.month');
+export const yearInput = getItemID('year');
+export const year = getItem('.year');
+export const cvcInput = getItemID('cvc');
+export const cvc = getItem('.cvc');
+export const submitBtn = getItem('.submit-btn');
+export const errorName = getItem('.error-name');
+export const errorNumber = getItem('.error-number');
+export const errorMonth = getItem('.error-month');
+export const errorYear = getItem('.error-year');
+export const errorCvc = getItem('.error-cvc');
+export const formWrapper = getItem('.form-wrapper');
 
 customerNameInput.addEventListener('keyup', (e) => {
   let value = e.target.value;
@@ -30,9 +36,6 @@ customerNameInput.addEventListener('keyup', (e) => {
     customerName.textContent = 'jane appleseed';
   }
 });
-
-const cardNumberInput = getItemID('card-number');
-const cardNubmer = getItem('.card-number');
 
 cardNumberInput.addEventListener('keyup', (e) => {
   let valueStr = e.target.value;
@@ -62,9 +65,6 @@ cardNumberInput.addEventListener('keyup', (e) => {
   }
 });
 
-const monthInput = getItemID('month');
-const month = getItem('.month');
-
 monthInput.addEventListener('keyup', (e) => {
   let value = e.target.value;
   let valueInt = parseInt(value);
@@ -85,9 +85,6 @@ monthInput.addEventListener('keyup', (e) => {
     month.textContent = value;
   }
 });
-
-const yearInput = getItemID('year');
-const year = getItem('.year');
 
 yearInput.addEventListener('keyup', (e) => {
   let value = e.target.value;
@@ -110,9 +107,6 @@ yearInput.addEventListener('keyup', (e) => {
   }
 });
 
-const cvcInput = getItemID('cvc');
-const cvc = getItem('.cvc');
-
 cvcInput.addEventListener('keyup', (e) => {
   let value = e.target.value;
   let valueInt = parseInt(value);
@@ -134,164 +128,9 @@ cvcInput.addEventListener('keyup', (e) => {
   }
 });
 
-const submitBtn = getItem('.submit-btn');
-const errorName = getItem('.error-name');
-const errorNumber = getItem('.error-number');
-const errorMonth = getItem('.error-month');
-const errorYear = getItem('.error-year');
-const errorCvc = getItem('.error-cvc');
-
-function isNumber(str) {
+export function isNumber(str) {
   return /\d/.test(str);
 }
-
-const validateName = () => {
-  let result = false;
-  const name = customerNameInput.value;
-
-  if (!name) {
-    console.log('there is no name');
-    errorName.style.visibility = 'visible';
-    errorName.textContent = "Can't be blank";
-    customerNameInput.classList.add('error-border');
-  }
-
-  if (name) {
-    errorName.style.visibility = 'hidden';
-    customerNameInput.classList.remove('error-border');
-    result = true;
-  }
-  return result;
-};
-
-const validateCardNumber = () => {
-  let result = false;
-  const number = cardNumberInput.value;
-  const numberInt = parseInt(number);
-  let checkNumber = isNumber(number);
-
-  if (number === '') {
-    console.log('there is no card number');
-    errorNumber.style.visibility = 'visible';
-    errorNumber.textContent = "Can't be blank";
-    cardNumberInput.classList.add('error-border');
-    return false;
-  }
-
-  if (!checkNumber) {
-    console.log('card number is NaN');
-    errorNumber.style.visibility = 'visible';
-    errorNumber.textContent = 'Wrong format, numbers only';
-    cardNumberInput.classList.add('error-border');
-    return false;
-  }
-
-  if (number.length != 16 || numberInt <= 0) {
-    console.log('card number wrong lenght');
-    errorNumber.style.visibility = 'visible';
-    errorNumber.textContent = 'Please, doule-check the card number';
-    cardNumberInput.classList.add('error-border');
-    return false;
-  }
-
-  if (number) {
-    result = true;
-    errorNumber.style.visibility = 'hidden';
-    cardNumberInput.classList.remove('error-border');
-  }
-
-  return result;
-};
-
-const validateMonth = () => {
-  let result = false;
-  const month = monthInput.value;
-  const monthInt = parseInt(month);
-
-  if (!month) {
-    console.log('there is no month');
-    errorMonth.style.visibility = 'visible';
-    errorMonth.textContent = "Can't be blank";
-    monthInput.classList.add('error-border');
-    return false;
-  }
-
-  if (monthInt <= 0 || monthInt > 12) {
-    console.log('month is wrong');
-    errorMonth.style.visibility = 'visible';
-    errorMonth.textContent = 'Wrong month';
-    monthInput.classList.add('error-border');
-    return false;
-  }
-  if (month) {
-    result = true;
-    errorMonth.style.visibility = 'hidden';
-    monthInput.classList.remove('error-border');
-  }
-
-  return result;
-};
-
-const validateYear = () => {
-  let result = false;
-  const year = yearInput.value;
-  const yearInt = parseInt(year);
-
-  if (!year) {
-    console.log('there is no year');
-    errorYear.style.visibility = 'visible';
-    errorYear.textContent = "Can't be blank";
-    yearInput.classList.add('error-border');
-    return false;
-  }
-
-  if (yearInt <= 0 || yearInt > 99) {
-    console.log('year is wrong');
-    errorYear.style.visibility = 'visible';
-    errorYear.textContent = 'Wrong year';
-    yearInput.classList.add('error-border');
-    return false;
-  }
-
-  if (year) {
-    result = true;
-    errorYear.style.visibility = 'hidden';
-    yearInput.classList.remove('error-border');
-  }
-
-  return result;
-};
-
-const validateCvc = () => {
-  let result = false;
-  const cvc = cvcInput.value;
-  const cvcInt = parseInt(cvc);
-
-  if (!cvc) {
-    console.log('there is no cvc');
-    errorCvc.style.visibility = 'visible';
-    cvcInput.classList.add('error-border');
-    return false;
-  }
-
-  if (cvcInt <= 0 || cvcInt > 999) {
-    console.log('cvc is wrong');
-    errorCvc.style.visibility = 'visible';
-    errorCvc.textContent = 'Please double-check CVC';
-    cvcInput.classList.add('error-border');
-    return false;
-  }
-
-  if (cvc) {
-    result = true;
-    errorCvc.style.visibility = 'hidden';
-    cvcInput.classList.remove('error-border');
-  }
-
-  return result;
-};
-
-const formWrapper = getItem('.form-wrapper');
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -301,6 +140,7 @@ submitBtn.addEventListener('click', (e) => {
   let nameValid = validateName();
   if (nameValid) {
     console.log('name valid');
+    customerData[0].customer_name = customerNameInput.value;
     isFormValid++;
   }
 
@@ -308,6 +148,7 @@ submitBtn.addEventListener('click', (e) => {
   let cardValid = validateCardNumber();
   if (cardValid) {
     console.log('card valid');
+    customerData[0].card_number = cardNumberInput.value;
     isFormValid++;
   }
 
@@ -315,6 +156,7 @@ submitBtn.addEventListener('click', (e) => {
   let monthValid = validateMonth();
   if (monthValid) {
     console.log('month valid');
+    customerData[0].card_month = cardNumberInput.value;
     isFormValid++;
   }
 
@@ -322,6 +164,7 @@ submitBtn.addEventListener('click', (e) => {
   let yearValid = validateYear();
   if (yearValid) {
     console.log('year valid');
+    customerData[0].card_year = yearInput.value;
     isFormValid++;
   }
 
@@ -329,8 +172,11 @@ submitBtn.addEventListener('click', (e) => {
   let cvcValid = validateCvc();
   if (cvcValid) {
     console.log('cvc valid');
+    customerData[0].card_cvc = cvcInput.value;
     isFormValid++;
   }
+
+  console.log(customerData[0]);
 
   if (isFormValid === 5) {
     formWrapper.innerHTML = `
