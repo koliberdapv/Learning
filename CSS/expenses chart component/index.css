@@ -136,7 +136,7 @@ footer {
   font-size: var(--fs-big);
   font-weight: var(--fw-700);
   color: var(--clr-dark-brown);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .price-increase {
@@ -157,13 +157,7 @@ footer {
   align-content: space-between;
 }
 
-.day-1,
-.day-2,
-.day-3,
-.day-4,
-.day-5,
-.day-6,
-.day-7 {
+.day {
   width: 100%;
   height: 10rem;
   display: flex;
@@ -173,18 +167,12 @@ footer {
   gap: 0.5rem;
 }
 
-.day {
+.week-day {
   font-size: var(--fs-super-small);
   color: var(--clr-medium-brown);
 }
 
-.day-1-size,
-.day-2-size,
-.day-3-size,
-.day-4-size,
-.day-5-size,
-.day-6-size,
-.day-7-size {
+.day-size {
   width: 100%;
   height: 68%;
   background-color: var(--clr-soft-red);
@@ -192,13 +180,7 @@ footer {
   cursor: pointer;
 }
 
-.day-1-size:hover,
-.day-2-size:hover,
-.day-3-size:hover,
-.day-4-size:hover,
-.day-5-size:hover,
-.day-6-size:hover,
-.day-7-size:hover {
+.day-size:hover {
   background-color: var(--clr-cyan);
 }
 
