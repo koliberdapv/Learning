@@ -7,14 +7,23 @@ import reminders from './images/icon-reminders.svg';
 import planning from './images/icon-planning.svg';
 
 const Features = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
   return (
     <>
-      <a href="#" className="features" onClick={() => setIsOpen(!isOpen)}>
-        Features{' '}
-        <img src={isOpen ? `${arrow_up}` : `${arrow_down}`} alt="arrow" />
+      <a
+        href="#"
+        className="features"
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      >
+        Features
+        <img
+          src={isSidebarOpen ? `${arrow_up}` : `${arrow_down}`}
+          alt="arrow"
+        />
       </a>
-      {isOpen && (
+      {isSidebarOpen && (
         <div className="features-wrapper">
           <img src={todo} alt="todo list" />
           <a href="#">Todo List</a>

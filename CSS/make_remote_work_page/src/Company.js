@@ -6,8 +6,8 @@ const Company = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <a href="#" className="compamy" onClick={() => setIsOpen(!isOpen)}>
-        Company{' '}
+      <a href="#" className="company" onClick={() => setIsOpen(!isOpen)}>
+        Company
         <img src={isOpen ? `${arrow_up}` : `${arrow_down}`} alt="arrow" />
       </a>
       {isOpen && (

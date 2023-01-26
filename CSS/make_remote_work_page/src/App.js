@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 import Main from './Main';
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <>
