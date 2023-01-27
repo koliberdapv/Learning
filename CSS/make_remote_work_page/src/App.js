@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Main from './Main';
+import Sybmenu from './Submenu';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -14,6 +15,7 @@ function App() {
         setIsSidebarOpen={setIsSidebarOpen}
       />
       <Main />
+      <Sybmenu />
     </>
   );
 }

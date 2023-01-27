@@ -4,10 +4,13 @@ import audiophile from './images/client-audiophile.svg';
 import databiz from './images/client-databiz.svg';
 import maker from './images/client-maker.svg';
 import meet from './images/client-meet.svg';
+import { useGlobalContext } from './Context';
 
 const Main = () => {
+  const { closeSubmenu } = useGlobalContext();
+
   return (
-    <main>
+    <main onMouseOver={closeSubmenu}>
       <div className="main-content-wrapper">
         <div className="hero-image-wrapper">
           <img src={hero_desktop} className="hero-desktop" alt="hero-image" />
