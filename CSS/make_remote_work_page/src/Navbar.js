@@ -1,14 +1,15 @@
 import logo from './images/logo.svg';
 import icon_menu from './images/icon-menu.svg';
-import Features from './Features';
-import Company from './Company';
+import arrow_up from './images/icon-arrow-up.svg';
+import arrow_down from './images/icon-arrow-down.svg';
 import { useGlobalContext } from './Context';
 
 const Navbar = ({ setIsSidebarOpen }) => {
-  const { displayFeatures, closeSubmenu } = useGlobalContext();
+  const { displayFeatures, closeSubmenu, setIsSubmenuOpen } =
+    useGlobalContext();
 
   const handleSubmenu = (e) => {
-    if (!e.target.classList.contains('features')) {
+    if (!e.target.classList.contains('sub')) {
       closeSubmenu();
     }
   };
@@ -21,11 +22,19 @@ const Navbar = ({ setIsSidebarOpen }) => {
         </div>
 
         <div className="links-wrapper navbar-links">
-          <a href="#" className="features" onMouseOver={displayFeatures}>
+          <a href="#" className="features sub" onMouseOver={displayFeatures}>
             Features
+            <img
+              src={setIsSubmenuOpen ? `${arrow_up}` : `${arrow_down}`}
+              alt="arrow"
+            />
           </a>
-          <a href="#" className="Company" onMouseOver={displayFeatures}>
+          <a href="#" className="company sub" onMouseOver={displayFeatures}>
             Company
+            <img
+              src={setIsSubmenuOpen ? `${arrow_up}` : `${arrow_down}`}
+              alt="arrow"
+            />
           </a>
 
           <a href="#">Careers</a>

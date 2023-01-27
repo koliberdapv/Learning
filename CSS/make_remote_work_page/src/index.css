@@ -334,12 +334,17 @@ body:has(.sidebar)::before {
     align-items: center;
   }
 
-  .features {
-    height: 2rem;
+  .features,
+  .company {
+    height: 3rem;
     align-items: center;
   }
 
-  .submenu-features {
+  .company-wrapper {
+    display: flex;
+  }
+
+  .submenu {
     position: absolute;
     top: 0;
     right: 0;
@@ -353,5 +358,15 @@ body:has(.sidebar)::before {
   }
   .show-submenu {
     display: grid;
+  }
+
+  .submenu a {
+    text-decoration: none;
+    color: var(--clr-medium-gray);
+    font-size: var(--fs-a);
+  }
+  .submenu a:hover {
+    color: var(--clr-almost-black);
+    border-color: var(--clr-almost-black);
   }
 }

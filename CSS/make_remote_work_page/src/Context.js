@@ -5,6 +5,7 @@ const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+  const [features, setFeatures] = useState(false);
   const [location, setLocation] = useState({});
   const [page, setPage] = useState({ page: '', links: [] });
 
@@ -16,9 +17,17 @@ export const AppProvider = ({ children }) => {
   };
 
   const displayFeatures = (e) => {
+    console.log(isSubmenuOpen);
     const page = e.target.textContent;
+
+    if (page === 'Features') {
+      setFeatures(true);
+    }
+    if (page === 'Company') {
+      setFeatures(false);
+    }
+
     const tempBtn = e.target.getBoundingClientRect();
-    console.log(tempBtn);
     const center = (tempBtn.left + tempBtn.right) / 2;
     const bottom = tempBtn.bottom - 3;
     openSubmenu(page, { center, bottom });
@@ -37,6 +46,8 @@ export const AppProvider = ({ children }) => {
         displayFeatures,
         closeSubmenu,
         page,
+        features,
+        setFeatures,
       }}
     >
       {children}
