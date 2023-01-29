@@ -17,7 +17,6 @@ export const AppProvider = ({ children }) => {
   };
 
   const displayFeatures = (e) => {
-    console.log(isSubmenuOpen);
     const page = e.target.textContent;
 
     if (page === 'Features') {

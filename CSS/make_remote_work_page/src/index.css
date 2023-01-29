@@ -264,6 +264,9 @@ body:has(.sidebar)::before {
   color: var(--clr-almost-black);
   border-color: var(--clr-almost-black);
 }
+.submenu {
+  display: none;
+}
 
 @media screen and (min-width: 1000px) {
   .hero-mobile {
@@ -347,7 +350,7 @@ body:has(.sidebar)::before {
   .submenu {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -10rem;
     width: fit-content;
     padding: 2rem;
     background-color: var(--clr-almost-white);
