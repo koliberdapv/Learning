@@ -1,8 +1,12 @@
-const Advice = () => {
+const Advice = ({ advice }) => {
+  const { id, advice: quote } = advice.slip;
   return (
-    <h1 className="advice">
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, est!"
-    </h1>
+    <>
+      <p className="title">
+        advice #<span>{id}</span>
+      </p>
+      <h1 className="advice">"{quote}"</h1>
+    </>
   );
 };
 export default Advice;
