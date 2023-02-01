@@ -1,0 +1,119 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+  --ff-main: 'Rubik', sans-serif;
+  --fw-light: 300;
+  --fw-medium: 400;
+  --fw-bold: 500;
+
+  --clr-blue: hsl(246, 80%, 60%);
+  --clr-work: hsl(15, 100%, 70%);
+  --clr-play: hsl(195, 74%, 62%);
+  --clr-study: hsl(348, 100%, 68%);
+  --clr-exercise: hsl(145, 58%, 55%);
+  --clr-social: hsl(264, 64%, 52%);
+  --clr-self-care: hsl(43, 84%, 65%);
+
+  --clr-very-dark-blue: hsl(226, 43%, 10%);
+  --clr-social-dark-blue: hsl(235, 46%, 20%);
+  --clr-social-desaturated-blue: hsl(235, 45%, 61%);
+  --clr-social-pale-blue: hsl(236, 100%, 87%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --fs-h1: 20px;
+  --fs-h2: 18px;
+  --fs-h3: ;
+  --fs-p: 12px;
+  --fs-span: ;
+
+  --br-10: 10px;
+}
+
+body {
+  font-family: var(--ff-main);
+  background-color: var(--clr-very-dark-blue);
+  color: var(--clr-white);
+  font-weight: var(--fw-light);
+}
+
+.main {
+  max-width: 365px;
+  padding: 4rem 2rem;
+  margin-inline: auto;
+}
+
+.person-wrapper {
+  display: grid;
+  width: 100%;
+}
+
+.person-info {
+  background-color: var(--clr-blue);
+  display: flex;
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: var(--br-10);
+  gap: 1.25rem;
+  z-index: 2;
+}
+
+.avatar-wrapper {
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid var(--clr-white);
+  border-radius: 50%;
+}
+.avatar-wrapper img {
+  width: 100%;
+}
+
+.name-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.name-info h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-light);
+}
+
+.name-info p {
+  font-size: var(--fs-p);
+  color: var(--clr-social-pale-blue);
+  font-weight: var(--fw-medium);
+}
+
+.schedule-cycle {
+  margin-top: -1rem;
+  padding: 2rem 0 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: var(--clr-social-dark-blue);
+  border-radius: var(--br-10);
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: var(--clr-social-desaturated-blue);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-active {
+  color: var(--clr-social-pale-blue);
+  font-weight: var(--fw-bold);
+}
