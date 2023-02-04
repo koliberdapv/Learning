@@ -13,7 +13,7 @@ Users should be able to:
 ### Screenshot
 
 ![](./src/images/screenshot-mobile.jpg)
-![](./src/images/screenshot-decktop.jpg)
+![](./src/images/screenshot-descktop.jpg)
 
 ### Links
 
