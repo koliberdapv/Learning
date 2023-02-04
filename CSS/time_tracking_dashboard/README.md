@@ -17,8 +17,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/koliberdapv/Learning/tree/master/CSS/time_tracking_dashboard](https://github.com/koliberdapv/Learning/tree/master/CSS/time_tracking_dashboard)
+- Live Site URL: [https://time-tracking-dashboard-fmentor.netlify.app](https://time-tracking-dashboard-fmentor.netlify.app)
 
 ### Built with
 
