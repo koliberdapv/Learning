@@ -1,6 +1,16 @@
 import person_img from './images/image-jeremy.png';
 
-const Person = () => {
+// const handleClick = (e) => {
+//   const target = e.target.textContent;
+//   console.log(target);
+//   setCycle(target);
+// };
+
+const Person = ({ cycle, setCycle }) => {
+  const handleClick = (e) => {
+    const target = e.target.textContent;
+    setCycle(target);
+  };
   return (
     <div className="person-wrapper">
       <div className="person-info">
@@ -13,14 +23,26 @@ const Person = () => {
         </div>
       </div>
       <div className="schedule-cycle">
-        <button type="button" className="btn">
-          Daily
+        <button
+          type="button"
+          className={`btn ${cycle === 'daily' && 'btn-active'}`}
+          onClick={handleClick}
+        >
+          daily
         </button>
-        <button type="button" className="btn btn-active">
-          Weekly
+        <button
+          type="button"
+          className={`btn ${cycle === 'weekly' && 'btn-active'}`}
+          onClick={handleClick}
+        >
+          weekly
         </button>
-        <button type="button" className="btn">
-          Monthly
+        <button
+          type="button"
+          className={`btn ${cycle === 'monthly' && 'btn-active'}`}
+          onClick={handleClick}
+        >
+          monthly
         </button>
       </div>
     </div>
