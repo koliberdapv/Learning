@@ -4,12 +4,14 @@ import Main from './Main';
 import Header from './Header';
 import Aside from './Aside';
 import Testimonials from './Testimonials';
+import { useState } from 'react';
 
 function App() {
+  const [isAsideOpen, setIsAsideOpen] = useState(false);
   return (
     <div className="content-wrapper">
-      <Header />
-      <Aside />
+      <Header isAsideOpen={isAsideOpen} setIsAsideOpen={setIsAsideOpen} />
+      <Aside isAsideOpen={isAsideOpen} />
       <Main />
       <Testimonials />
       <Figure />

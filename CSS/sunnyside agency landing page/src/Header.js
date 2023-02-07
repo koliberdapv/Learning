@@ -4,7 +4,7 @@ import header_mobile from './images/mobile/image-header.jpg';
 import header_desktop from './images/desktop/image-header.jpg';
 import arrow from './images/icon-arrow-down.svg';
 
-const Header = () => {
+const Header = ({ isAsideOpen, setIsAsideOpen }) => {
   return (
     <header>
       <nav>
@@ -19,22 +19,18 @@ const Header = () => {
             contact
           </button>
         </div>
-        <button type="button" className="hamburger-btn">
+        <button
+          type="button"
+          className="hamburger-btn"
+          onClick={() => setIsAsideOpen(!isAsideOpen)}
+        >
           <img src={hamburger} alt="See more" />
         </button>
       </nav>
       <article className="header-image-content">
         <div className="header-image-wrapper">
-          <img
-            src={header_mobile}
-            alt="image"
-            className="header-image-mobile"
-          />
-          <img
-            src={header_desktop}
-            alt="image"
-            className="header-image-desktop"
-          />
+          <img src={header_mobile} alt="image" className="mobile" />
+          <img src={header_desktop} alt="image" className="desktop" />
         </div>
         <div className="header-title">
           <h1>we are creatives</h1>
