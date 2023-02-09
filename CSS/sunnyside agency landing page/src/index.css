@@ -32,23 +32,25 @@
   --clr-grayish-blue: hsl(210, 4%, 67%);
   --clr-white: hsl(0, 0%, 100%);
 
+  --fs-title: 2.4rem;
   --fs-h1: 2.2rem;
   --fs-h2: 1.8rem;
-  --fs-h3: 1.6rem;
+  --fs-h3: 1.7rem;
   --fs-h4: 1.2rem;
   --fs-p: 16px;
   --fs-a: 14px;
+  --fs-a-: 12px;
   --fs-btn: 18px;
-  /* 18px */
 
   --lh-p: 1.6rem;
+  --ls: 2px;
 }
 
 .content-wrapper {
-  /* min-width: 350px; */
-  /* min-width: 100dvw; */
-  /* min-height: 100vh; */
-  /* min-height: 100dvh; */
+  min-width: 350px;
+  min-width: 100dvw;
+  min-height: 100vh;
+  min-height: 100dvh;
 
   font-family: var(--ff-text);
   font-weight: var(--fw-400);
@@ -165,7 +167,7 @@ nav {
 }
 
 /* header image swap  */
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 1100px) {
   .desktop {
     display: block;
   }
@@ -179,7 +181,10 @@ nav {
     display: none;
   }
   .arrow-wrapper {
-    height: 5rem;
+    height: 6rem;
+  }
+  .header-title h1 {
+    font-size: var(--fs-title);
   }
 }
 
@@ -201,7 +206,7 @@ nav {
 }
 
 .aside-wrapper a {
-  color: var(--clr-grayish-blue);
+  color: var(--clr-very-dark-grayish-blue);
   font-size: var(--fs-h4);
   font-weight: var(--fw-600);
   text-decoration: none;
@@ -217,14 +222,16 @@ nav {
   background-color: var(--clr-yellow);
   padding: 1.25rem 2.25rem;
   font-size: var(--fs-p);
+  color: var(--clr-very-dark-desaturated-blue);
 }
 
 .aside-btn:hover {
   color: var(--clr-white);
-  background-color: var(--clr-footer);
+  /* background-color: var(--clr-footer); */
+  background-color: hsla(204, 100%, 50%, 0.802);
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 1100px) {
   .aside-wrapper {
     display: none;
   }
@@ -277,10 +284,7 @@ nav {
   display: grid;
   place-items: center;
   font-size: var(--fs-p);
-}
-
-.info-btn {
-  cursor: pointer;
+  color: var(--clr-very-dark-desaturated-blue);
 }
 
 .underline {
@@ -288,11 +292,24 @@ nav {
   width: 115%;
   background-color: hsl(7, 99%, 70%, 0.35);
   border-radius: 5px;
-  margin-top: -0.4rem;
+  margin-top: -0.5rem;
+  z-index: -1;
+}
+
+.info-btn {
+  cursor: pointer;
 }
 
 .underline-egg {
   background-color: hsl(51, 100%, 49%, 0.35);
+}
+
+.info-btn:hover .underline {
+  background-color: hsl(7, 99%, 70%);
+}
+
+.info-btn:hover .underline-egg {
+  background-color: hsl(51, 100%, 49%);
 }
 
 .main-article {
@@ -312,7 +329,7 @@ nav {
   display: grid;
   text-align: center;
   gap: 2rem;
-  padding: 0 2rem 4rem;
+  padding: 0 2rem 5rem;
 }
 
 .article-info h3 {
@@ -333,11 +350,118 @@ nav {
   margin-inline: auto;
 }
 
-@media screen and (min-width: 930px) {
+.graphic-design p,
+.graphic-design h3 {
+  color: var(--clr-graphic-design-text);
+}
+
+.photography p,
+.photography h3 {
+  color: var(--clr-photography-text);
+}
+
+@media screen and (min-width: 1100px) {
   .header-image-content {
     margin-bottom: 0;
   }
   .main-wrapper {
     grid-template-columns: 50% 50%;
+  }
+  .article-info {
+    padding: 0 2rem 3rem;
+  }
+  .egg-text {
+    order: -1;
+  }
+  .main-info {
+    text-align: left;
+    place-items: unset;
+    padding: 6rem 4rem;
+    justify-content: center;
+    max-width: 535px;
+    margin-inline: auto;
+  }
+
+  .main-info h2 {
+    font-size: var(--fs-h1);
+  }
+
+  .info-btn {
+    width: fit-content;
+  }
+}
+
+/* ===== TESTIMONIALS ===== */
+
+.testimonials {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  padding: 4rem 0;
+}
+
+.testimonials h4 {
+  text-transform: uppercase;
+  color: var(--clr-grayish-blue);
+  font-family: var(--ff-headers);
+  letter-spacing: var(--ls);
+  margin: 0 auto 4rem;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.single-testimonial {
+  display: grid;
+  justify-items: center;
+  padding: 0 2.5rem;
+  text-align: center;
+  gap: 1rem;
+  max-width: 375px;
+}
+
+.avatar-wrapper {
+  height: 4.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.quote {
+  line-height: var(--lh-p);
+  color: var(--clr-very-dark-grayish-blue);
+  font-size: var(--fs-p);
+}
+
+.person-info {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.person-name {
+  text-transform: capitalize;
+  font-family: var(--ff-headers);
+  font-size: var(--fs-p);
+}
+
+.job-position {
+  color: var(--clr-grayish-blue);
+  text-transform: capitalize;
+  font-size: var(--fs-a-);
+}
+
+@media screen and (min-width: 1100px) {
+  .testimonials-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 4rem;
+    gap: 2rem;
   }
 }

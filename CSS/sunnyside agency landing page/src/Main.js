@@ -46,10 +46,10 @@ const Main = () => {
         </button>
       </article>
 
-      <article className="main-article graphic-designs">
+      <article className="main-article ">
         <img src={cherry_mobile} alt="cherry" className="mobile" />
         <img src={cherry_desktop} alt="cherry" className="desktop" />
-        <div className="article-info">
+        <div className="article-info graphic-design">
           <h3>graphic design</h3>
           <p>
             Great design makes you memorable. We deliver artwork that undercores
@@ -58,10 +58,10 @@ const Main = () => {
         </div>
       </article>
 
-      <article className="main-article photography">
+      <article className="main-article ">
         <img src={orange_mobile} alt="orange" className="mobile" />
         <img src={orange_desktop} alt="orange" className="desktop" />
-        <div className="article-info">
+        <div className="article-info photography">
           <h3>photography</h3>
           <p>
             Increase your credibility by getting the most stunning, high-quality
