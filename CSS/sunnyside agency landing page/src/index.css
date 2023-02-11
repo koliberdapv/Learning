@@ -554,6 +554,5 @@ nav {
 }
 
 .socials-wrapper a:hover {
-  filter: invert(27%) sepia(11%) saturate(1982%) hue-rotate(116deg)
-    brightness(30%) contrast(88%);
+  filter: brightness(0) invert(1);
 }
