@@ -1,9 +1,9 @@
 import Navbar from './Navbar';
 
-const Header = () => {
+const Header = ({ setIsMenuOpen, isMenuOpen }) => {
   return (
     <header className="header-wrapper">
-      <Navbar />
+      <Navbar setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
       <section className="hero-section">
         <h1>A modern publishing platform</h1>
         <p>Grow your audience and build your online brand</p>
