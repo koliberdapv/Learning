@@ -1,8 +1,15 @@
-import arrow_dark from './images/icon-arrow-dark.svg';
+import { useGlobalContext } from './Context';
 
 const Connect = () => {
+  const { isSubmenuOpen } = useGlobalContext();
   return (
-    <ul className="aside-links-wrapper">
+    <ul
+      className={`${
+        isSubmenuOpen
+          ? 'aside-links-wrapper submenu-links'
+          : 'aside-links-wrapper'
+      }`}
+    >
       <li>
         <a href="#">Contact</a>
       </li>

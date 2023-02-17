@@ -42,6 +42,7 @@
   --clr-white-text: hsl(0, 0%, 100%);
   --clr-grayish-blue-footer-text: hsl(240, 2%, 79%);
   --clr-aside-content: hsl(240, 2%, 79%, 0.3);
+  --clr-aside-content: hsl(0, 0%, 96%);
   --clr-very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
   --clr-very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
 
@@ -357,9 +358,10 @@ img {
   border-radius: var(--br-5px);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   justify-content: center;
   gap: 1rem;
+  z-index: 6;
 }
 
 .aside-links-wrapper a {
@@ -371,4 +373,31 @@ img {
 
 .aside-links-wrapper li {
   list-style: none;
+}
+
+.submenu-wrapper {
+  box-shadow: 0 5px 15px 3px hsl(0, 0%, 0%, 0.2);
+  border-radius: var(--br-5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+  z-index: 6 !important;
+  width: 7rem;
+}
+
+.submenu-links {
+  text-align: left;
+  background-color: var(--clr-white-text);
+}
+
+.submenu-links a {
+  text-decoration: none;
+  font-size: var(--fs-a);
+  font-weight: var(--fw-secondary-400);
+  font-family: var(--ff-secondary);
+}
+
+.submenu-links a:hover {
+  font-weight: var(--fw-secondary-500);
 }

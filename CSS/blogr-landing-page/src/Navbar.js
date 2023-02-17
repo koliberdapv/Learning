@@ -2,16 +2,53 @@ import logo from './images/logo.svg';
 import hamburger from './images/icon-hamburger.svg';
 import icon_close from './images/icon-close.svg';
 import arrow_light from './images/icon-arrow-light.svg';
-import arrow_dark from './images/icon-arrow-dark.svg';
-import pattern_desktop from './images/bg-pattern-intro-desktop.svg';
-import pattern_mobile from './images/bg-pattern-intro-mobile.svg';
+import { useGlobalContext } from './Context';
 
-const Navbar = ({ setIsMenuOpen, isMenuOpen }) => {
+const Navbar = () => {
+  const {
+    isMenuOpen,
+    setIsMenuOpen,
+    isSubmenuOpen,
+    setIsSubmenuOpen,
+    submenuTarget,
+    setSubmenuTarget,
+    setLocation,
+  } = useGlobalContext();
+
   const handleMenuBtn = () => {
     const btn = document.querySelector('.nav-btn');
     btn.classList.toggle('menu-open');
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleClick = (e) => {
+    const target = e.target.textContent;
+
+    if (submenuTarget !== target) {
+      setIsSubmenuOpen(true);
+    }
+
+    if (submenuTarget === target) {
+      setIsSubmenuOpen(!isSubmenuOpen);
+    }
+
+    if (!submenuTarget) {
+      setIsSubmenuOpen(true);
+    }
+
+    const tempBtn = e.target.getBoundingClientRect();
+    const center = (tempBtn.left + tempBtn.right) / 2;
+    const bottom = tempBtn.bottom + 15;
+    setLocation({ center, bottom });
+
+    setSubmenuTarget(target);
+
+    const arrow = e.target.nextSibling;
+    if (arrow) {
+      arrow.classList.toggle('arrow-upside-down');
+    }
+  };
+
   return (
     <nav className="navbar-wrapper">
       <figure className="logo-wrapper">
@@ -21,15 +58,21 @@ const Navbar = ({ setIsMenuOpen, isMenuOpen }) => {
       <div className="nav-desktop">
         <ul className="links-wrapper">
           <li className="single-link">
-            <a href="#">product</a>
+            <a href="#" onClick={handleClick}>
+              product
+            </a>
             <img src={arrow_light} alt="arrow down" className="arrow-down" />
           </li>
           <li className="single-link">
-            <a href="#">company</a>
-            <img src={arrow_light} alt="arrow down" className="arrow-down" />
+            <a href="#" onClick={handleClick}>
+              company
+            </a>
+            <img src={arrow_light} alt="arrow down" />
           </li>
           <li className="single-link">
-            <a href="#">connect</a>
+            <a href="#" onClick={handleClick}>
+              connect
+            </a>
             <img src={arrow_light} alt="arrow down" className="arrow-down" />
           </li>
         </ul>

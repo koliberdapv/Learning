@@ -1,13 +1,15 @@
 import Header from './Header';
 import Aside from './Aside';
-import { useState } from 'react';
+import { useGlobalContext } from './Context.js';
+import Submenu from './Submenu';
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isMenuOpen, isSubmenuOpen } = useGlobalContext();
   return (
     <div className="content-wrapper">
-      <Header setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
+      <Header />
       {isMenuOpen && <Aside />}
+      {isSubmenuOpen && <Submenu />}
     </div>
   );
 }
