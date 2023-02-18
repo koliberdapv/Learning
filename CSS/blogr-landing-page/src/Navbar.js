@@ -16,13 +16,31 @@ const Navbar = () => {
   } = useGlobalContext();
 
   const handleMenuBtn = () => {
-    const btn = document.querySelector('.nav-btn');
-    btn.classList.toggle('menu-open');
     setIsMenuOpen(!isMenuOpen);
+    const btn = document.querySelector('.nav-btn');
+    if (isMenuOpen) {
+      const firstChild = btn.firstChild;
+      firstChild.style.display = 'block';
+      const secondChild = firstChild.nextSibling;
+      secondChild.style.display = 'none';
+      return;
+    }
+    if (!isMenuOpen) {
+      const firstChild = btn.firstChild;
+      firstChild.style.display = 'none';
+      const secondChild = firstChild.nextSibling;
+      secondChild.style.display = 'block';
+      return;
+    }
   };
 
   const handleClick = (e) => {
+    const arrows = document.querySelectorAll('.arrow-down');
+    arrows.forEach((arrow) => {
+      arrow.classList.remove('arrow-upside-down');
+    });
     const target = e.target.textContent;
+    const arrow = e.target.nextSibling;
 
     if (submenuTarget !== target) {
       setIsSubmenuOpen(true);
@@ -30,6 +48,7 @@ const Navbar = () => {
 
     if (submenuTarget === target) {
       setIsSubmenuOpen(!isSubmenuOpen);
+      arrow.classList.toggle('arrow-upside-down');
     }
 
     if (!submenuTarget) {
@@ -40,13 +59,9 @@ const Navbar = () => {
     const center = (tempBtn.left + tempBtn.right) / 2;
     const bottom = tempBtn.bottom + 15;
     setLocation({ center, bottom });
-
     setSubmenuTarget(target);
 
-    const arrow = e.target.nextSibling;
-    if (arrow) {
-      arrow.classList.toggle('arrow-upside-down');
-    }
+    arrow.classList.toggle('arrow-upside-down');
   };
 
   return (
@@ -67,7 +82,7 @@ const Navbar = () => {
             <a href="#" onClick={handleClick}>
               company
             </a>
-            <img src={arrow_light} alt="arrow down" />
+            <img src={arrow_light} alt="arrow down" className="arrow-down" />
           </li>
           <li className="single-link">
             <a href="#" onClick={handleClick}>
@@ -86,11 +101,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <button
-        type="button"
-        className="nav-btn menu-open"
-        onClick={handleMenuBtn}
-      >
+      <button type="button" className="nav-btn" onClick={handleMenuBtn}>
         <img src={hamburger} alt="open menu" className="icon-open-menu" />
         <img src={icon_close} alt="close menu" className="icon-close-menu" />
       </button>

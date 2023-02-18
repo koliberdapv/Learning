@@ -1,12 +1,10 @@
 import Navbar from './Navbar';
-import { useGlobalContext } from './Context';
 
 const Header = () => {
-  const { setIsSubmenuOpen } = useGlobalContext();
   return (
     <header className="header-wrapper">
       <Navbar />
-      <section className="hero-section" onClick={() => setIsSubmenuOpen(false)}>
+      <section className="hero-section">
         <h1>A modern publishing platform</h1>
         <p>Grow your audience and build your online brand</p>
         <div className="hero-buttons-wrapper">

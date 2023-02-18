@@ -180,18 +180,11 @@ img {
 }
 
 .icon-close-menu {
-  display: block;
+  display: none;
 }
 
 .icon-open-menu {
-  display: none;
-}
-
-.menu-open :nth-child(1) {
   display: block;
-}
-.menu-open :nth-child(2) {
-  display: none;
 }
 
 @media screen and (min-width: 1000px) {
