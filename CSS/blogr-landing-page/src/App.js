@@ -4,6 +4,7 @@ import { useGlobalContext } from './Context.js';
 import Submenu from './Submenu';
 import Main from './Main';
 import StateOfArt from './StateOfArt';
+import AddInfo from './AddInfo';
 
 function App() {
   const { isMenuOpen, isSubmenuOpen } = useGlobalContext();
@@ -14,6 +15,7 @@ function App() {
       {isSubmenuOpen && <Submenu />}
       <Main />
       <StateOfArt />
+      <AddInfo />
     </div>
   );
 }

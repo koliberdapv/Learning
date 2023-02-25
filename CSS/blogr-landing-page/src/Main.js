@@ -11,7 +11,7 @@ const Main = () => {
       </figure>
       <section className="main-info">
         <article>
-          <h2>Introducing an extensile editor</h2>
+          <h3>Introducing an extensile editor</h3>
           <p>
             Blogr features an exceedingle intuitive interface which lets you
             focus on one thing: creating content. The editor supports management
@@ -22,7 +22,7 @@ const Main = () => {
           </p>
         </article>
         <article>
-          <h2>Robust content management</h2>
+          <h3>Robust content management</h3>
           <p>
             Flexible content management enables users to easily move through
             posts. Increase the usability of your blog by adding customized

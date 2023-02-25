@@ -435,21 +435,23 @@ img {
   display: none;
 }
 
-.main-info {
+.main-info,
+.addinfo-info {
   display: flex;
   flex-direction: column;
   gap: 3rem;
   padding: 2.5rem;
 }
 
-.main-info article {
+.main-info article,
+.addinfo-info article {
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-article h2 {
+article h3 {
   font-family: var(--ff-main);
   color: var(--clr-very-dark-blue-headings);
   max-width: 80%;
@@ -625,3 +627,5 @@ article p {
     background-position-y: -23rem;
   }
 }
+
+/* **** ADDITIONAL INFO **** */
