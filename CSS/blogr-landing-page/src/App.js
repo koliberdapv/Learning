@@ -5,6 +5,7 @@ import Submenu from './Submenu';
 import Main from './Main';
 import StateOfArt from './StateOfArt';
 import AddInfo from './AddInfo';
+import Footer from './Footer';
 
 function App() {
   const { isMenuOpen, isSubmenuOpen } = useGlobalContext();
@@ -16,6 +17,7 @@ function App() {
       <Main />
       <StateOfArt />
       <AddInfo />
+      <Footer />
     </div>
   );
 }
