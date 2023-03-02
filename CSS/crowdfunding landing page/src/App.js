@@ -1,6 +1,7 @@
 import Header from './Header';
 import Aside from './Aside';
 import Darkener from './Darkener';
+import Main from './Main.js';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Darkener />
       <Aside />
       <Header />
+      <Main />
     </div>
   );
 }

@@ -6,6 +6,7 @@ export const AppProvider = ({ children }) => {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
   const [isDarkenerOpen, setIsDarkenerOpen] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [isBookmarkChecked, setIsBookmarkChecked] = useState(false);
 
   const changeAside = (action) => {
     const openBtn = document.querySelector('.aside-open-btn');
@@ -54,6 +55,8 @@ export const AppProvider = ({ children }) => {
         isDarkenerOpen,
         setIsDarkenerOpen,
         handleClickNavBtn,
+        isBookmarkChecked,
+        setIsBookmarkChecked,
       }}
     >
       {children}
