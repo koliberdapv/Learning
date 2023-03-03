@@ -2,6 +2,7 @@ import Header from './Header';
 import Aside from './Aside';
 import Darkener from './Darkener';
 import Main from './Main.js';
+import Modal from './Modal';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Aside />
       <Header />
       <Main />
+      <Modal />
     </div>
   );
 }

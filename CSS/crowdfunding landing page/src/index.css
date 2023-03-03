@@ -438,9 +438,64 @@ img {
   .card-title > :first-child {
     font-size: var(--fs-card-title-desktop);
   }
+}
 
-  .select-reward-btn {
-  }
+.about-wrapper:has(.cards-wrapper) .modal-card {
+  display: none;
+}
+
+/* ---------- BACKING OPTIONS ---------- */
+
+.modal-wrapper {
+  width: min(100% - 3rem, 650px);
+  margin: 0 auto;
+  background-color: var(--clr-white);
+  border-radius: var(--br-10);
+  padding: 2.5rem 1.5rem;
+  border: 1px solid var(--clr-light-gray-divider);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  position: absolute;
+  inset: 10rem 0 auto;
+  margin-inline: auto;
+  z-index: 3;
+}
+
+.modal-wrapper > * {
+  z-index: 3;
+}
+
+.close-modal-btn {
+  background-color: transparent;
+  border: none;
+  height: 1.25rem;
+}
+
+.close-modal-btn {
+  cursor: pointer;
+}
+
+.modal-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.modal-wrapper p {
+  color: var(--clr-dark-gray);
+  font-weight: var(--fw-500);
+  font-size: var(--fs-p);
+  line-height: var(--lh-p);
+}
+
+.app-wrapper:has(.modal-wrapper) .darkener {
+  z-index: 2;
 }
 
 /* ---------- UTILITIES ---------- */

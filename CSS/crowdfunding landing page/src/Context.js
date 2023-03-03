@@ -7,6 +7,22 @@ export const AppProvider = ({ children }) => {
   const [isDarkenerOpen, setIsDarkenerOpen] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [isBookmarkChecked, setIsBookmarkChecked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    setIsDarkenerOpen(true);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setIsDarkenerOpen(false);
+  };
 
   const changeAside = (action) => {
     const openBtn = document.querySelector('.aside-open-btn');
@@ -57,6 +73,10 @@ export const AppProvider = ({ children }) => {
         handleClickNavBtn,
         isBookmarkChecked,
         setIsBookmarkChecked,
+        isModalOpen,
+        setIsModalOpen,
+        closeModal,
+        openModal,
       }}
     >
       {children}
