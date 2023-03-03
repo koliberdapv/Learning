@@ -1,5 +1,5 @@
 import mastercraft from './images/logo-mastercraft.svg';
-
+import About from './About';
 import Bookmark from './Bookmark';
 
 const Main = () => {
@@ -42,6 +42,8 @@ const Main = () => {
           <div className="bar-inner-line"></div>
         </div>
       </section>
+
+      <About />
     </main>
   );
 };
