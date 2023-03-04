@@ -6,8 +6,8 @@ const Cards = () => {
     <section className="cards-wrapper">
       <article className="card">
         <div className="card-title">
-          <p>Bamboo Stand</p>
-          <p>Pledge $25 or more</p>
+          <p className="title-name">Bamboo Stand</p>
+          <p className="pledge">Pledge $25 or more</p>
         </div>
         <p>
           You get an ergonomic stand made of natural bamboo. You've helped us
@@ -31,8 +31,8 @@ const Cards = () => {
 
       <article className="card">
         <div className="card-title">
-          <p>Black Edition Stand</p>
-          <p>Pledge $75 or more</p>
+          <p className="title-name">Black Edition Stand</p>
+          <p className="pledge">Pledge $75 or more</p>
         </div>
         <p>
           You get a Black Special Edition computer stand and a personal thank
@@ -55,8 +55,8 @@ const Cards = () => {
 
       <article className="card out-of-stock">
         <div className="card-title">
-          <p>Mahogany Special Edition</p>
-          <p>Pledge $200 or more</p>
+          <p className="title-name"> Mahogany Special Edition</p>
+          <p className="pledge">Pledge $200 or more</p>
         </div>
         <p>
           You get two Special Edition Mahogany stands, a Backer T-Shirt, and a

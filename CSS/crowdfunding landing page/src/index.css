@@ -218,7 +218,8 @@ img {
   text-transform: capitalize;
 }
 
-.main-wrapper p {
+/* .main-wrapper p { */
+p {
   color: var(--clr-dark-gray);
   font-weight: var(--fw-500);
   font-size: var(--fs-p);
@@ -272,7 +273,6 @@ img {
   font-weight: var(--fw-700);
   color: var(--clr-black);
   font-size: var(--fs-statistics);
-  margin-bottom: 0.75rem;
 }
 
 .bar,
@@ -340,7 +340,8 @@ img {
     display: none;
   }
 
-  .main-wrapper p {
+  /* .main-wrapper p { */
+  p {
     font-size: var(--fs-p-desktop);
   }
 }
@@ -387,14 +388,16 @@ img {
   align-items: flex-start;
 }
 
-.card-title > :first-child {
-  color: black;
+/* .card-title > :first-child { */
+.title-name {
+  color: black !important;
+  font-weight: var(--fw-700) !important;
   font-size: var(--fs-card-title);
-  font-weight: var(--fw-700);
 }
 
-.card-title > :last-child {
-  color: var(--clr-moderate-cyan);
+/* .card-title > :last-child { */
+.pledge {
+  color: var(--clr-moderate-cyan) !important;
   font-size: var(--fs-card-title);
 }
 
@@ -435,7 +438,7 @@ img {
     justify-content: space-between;
   }
 
-  .card-title > :first-child {
+  .card-title:not(.grid-divider:has(.card-title) .card-title) > :first-child {
     font-size: var(--fs-card-title-desktop);
   }
 }
@@ -496,6 +499,62 @@ img {
 
 .app-wrapper:has(.modal-wrapper) .darkener {
   z-index: 2;
+}
+
+.grid-divider {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.modal-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .grid-divider {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    grid-template-columns: 1rem 1fr;
+  }
+  .modal-wrapper p {
+    font-size: var(--fs-p-desktop);
+  }
+
+  .radio {
+    /* color: var(--clr-moderate-cyan); */
+    grid-area: span 2;
+    align-self: flex-start;
+    justify-self: center;
+    height: 1.25rem;
+    width: 1.25rem;
+    accent-color: currentColor;
+    margin-top: 0.25rem;
+  }
+
+  .modal-desktop {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    border-right: none !important;
+    /* align-items: flex-start; */
+  }
+
+  .modal-desktop > :first-child {
+    font-size: 1.25rem;
+  }
+
+  .grid-divider:has(.card-title) .pledge {
+    margin: 0 auto 0 1rem;
+  }
+
+  .grid-divider:has(.card-title) .card-title {
+    align-items: flex-end;
+  }
+
+  #control-max-width {
+    max-width: 95%;
+  }
 }
 
 /* ---------- UTILITIES ---------- */

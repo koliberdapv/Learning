@@ -52,16 +52,16 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-  const checkWindowSize = () => {
-    changeAside('close');
-  };
+  // const checkWindowSize = () => {
+  //   changeAside('close');
+  // };
 
-  useEffect(() => {
-    window.addEventListener('resize', checkWindowSize);
-    return () => {
-      window.removeEventListener('resize', checkWindowSize);
-    };
-  }, [windowSize]);
+  // useEffect(() => {
+  //   window.addEventListener('resize', checkWindowSize);
+  //   return () => {
+  //     window.removeEventListener('resize', checkWindowSize);
+  //   };
+  // }, [windowSize]);
 
   return (
     <AppContext.Provider
