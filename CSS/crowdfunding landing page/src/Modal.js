@@ -3,6 +3,16 @@ import { useGlobalContext } from './Context';
 
 const Modal = () => {
   const { closeModal, isModalOpen } = useGlobalContext();
+
+  const handleClickRadio = (e) => {
+    const targetInput = e.target;
+    const cards = document.querySelectorAll('.modal-card');
+    cards.forEach((card) => {
+      card.classList.remove('modal-checked');
+    });
+    targetInput.parentElement.parentElement.classList.add('modal-checked');
+  };
+
   return (
     <>
       {isModalOpen && (
@@ -23,25 +33,47 @@ const Modal = () => {
           </article>
 
           <form className="cards-wrapper">
-            {isModalOpen && (
-              <article className="card modal-card">
-                <div className="grid-divider">
-                  <input type="radio" name="tier" className="radio" />
-                  <div className="card-title">
-                    <p className="title-name">Pledge with no reward</p>
-                  </div>
-                  <p>
-                    Choose to support us without a reward if you simply belive
-                    in our project. As a backer, you will be signed up to
-                    receive product updates via email.
-                  </p>
-                </div>
-              </article>
-            )}
-
-            <article className="card">
+            <article className="card modal-card">
               <div className="grid-divider">
-                <input type="radio" name="tier" className="radio" />
+                <input
+                  type="radio"
+                  name="tier"
+                  className="radio"
+                  onClick={handleClickRadio}
+                />
+                <div className="card-title">
+                  <p className="title-name">Pledge with no reward</p>
+                </div>
+                <p>
+                  Choose to support us without a reward if you simply belive in
+                  our project. As a backer, you will be signed up to receive
+                  product updates via email.
+                </p>
+              </div>
+              <div className="modal-cta">
+                <p id="hidden">Enter your pledge</p>
+                <div className="modal-input-wrapper">
+                  <input
+                    type="number"
+                    name="pledge"
+                    className="input-pledge"
+                    id="hidden"
+                  />
+                  <button type="button" className="btn continue-btn">
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article className="card modal-card">
+              <div className="grid-divider">
+                <input
+                  type="radio"
+                  name="tier"
+                  className="radio"
+                  onClick={handleClickRadio}
+                />
                 <div className="card-title">
                   <p className="title-name">Bamboo Stand</p>
                   <p className="pledge">Pledge $25 or more</p>
@@ -55,17 +87,30 @@ const Modal = () => {
                   helped us launch our promotional campaign, and you'll be added
                   to a special Backer member list.
                 </p>
+                <div className="statistics modal-phone">
+                  <p>101</p>
+                  <p>left</p>
+                </div>
               </div>
-              {/* <div className="card-cta">
-                <button type="button" className="btn select-reward-btn">
-                  Select Reward
-                </button>
-              </div> */}
+              <div className="modal-cta">
+                <p>Enter your pledge</p>
+                <div className="modal-input-wrapper">
+                  <input type="number" name="pledge" className="input-pledge" />
+                  <button type="button" className="btn continue-btn">
+                    Continue
+                  </button>
+                </div>
+              </div>
             </article>
 
-            <article className="card">
+            <article className="card modal-card">
               <div className="grid-divider">
-                <input type="radio" name="tier" className="radio" />
+                <input
+                  type="radio"
+                  name="tier"
+                  className="radio"
+                  onClick={handleClickRadio}
+                />
                 <div className="card-title">
                   <p className="title-name">Black Edition Stand</p>
                   <p className="pledge">Pledge $75 or more</p>
@@ -79,21 +124,25 @@ const Modal = () => {
                   thank you. You'll be added to our Backer member list. Shipping
                   is included.
                 </p>
-              </div>
-              {/* <div className="card-cta">
-                <div className="statistics">
+                <div className="statistics modal-phone">
                   <p>64</p>
                   <p>left</p>
                 </div>
-                <button type="button" className="btn select-reward-btn">
-                  Select Reward
-                </button>
-              </div> */}
+              </div>
+              <div className="modal-cta">
+                <p>Enter your pledge</p>
+                <div className="modal-input-wrapper">
+                  <input type="number" name="pledge" className="input-pledge" />
+                  <button type="button" className="btn continue-btn">
+                    Continue
+                  </button>
+                </div>
+              </div>
             </article>
 
-            <article className="card out-of-stock">
+            <article className="card out-of-stock modal-card">
               <div className="grid-divider">
-                <input type="radio" name="tier" className="radio" />
+                <input type="radio" name="tier" className="radio" disabled />
                 <label className="card-title">
                   <p className="title-name">Mahogany Special Edition</p>
                   <p className="pledge">Pledge $200 or more</p>
@@ -107,16 +156,11 @@ const Modal = () => {
                   and a personal thank you. You'll be added to our Backer member
                   list. Shipping is included.
                 </p>
-              </div>
-              {/* <div className="card-cta">
-                <div className="statistics">
+                <div className="statistics modal-phone">
                   <p>0</p>
                   <p>left</p>
                 </div>
-                <button type="button" className="btn select-reward-btn">
-                  Out of Stock
-                </button>
-              </div> */}
+              </div>
             </article>
           </form>
         </section>
