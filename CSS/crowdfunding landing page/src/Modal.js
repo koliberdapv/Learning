@@ -2,7 +2,7 @@ import close_icon from './images/icon-close-modal.svg';
 import { useGlobalContext } from './Context';
 
 const Modal = () => {
-  const { closeModal, isModalOpen } = useGlobalContext();
+  const { closeModal, isModalOpen, submitPledge } = useGlobalContext();
 
   const handleClickRadio = (e) => {
     const targetInput = e.target;
@@ -59,7 +59,11 @@ const Modal = () => {
                     className="input-pledge"
                     id="hidden"
                   />
-                  <button type="button" className="btn continue-btn">
+                  <button
+                    type="button"
+                    className="btn continue-btn"
+                    onClick={submitPledge}
+                  >
                     Continue
                   </button>
                 </div>
@@ -94,9 +98,13 @@ const Modal = () => {
               </div>
               <div className="modal-cta">
                 <p>Enter your pledge</p>
-                <div className="modal-input-wrapper">
+                <div className="modal-input-wrapper 25">
                   <input type="number" name="pledge" className="input-pledge" />
-                  <button type="button" className="btn continue-btn">
+                  <button
+                    type="button"
+                    className="btn continue-btn"
+                    onClick={submitPledge}
+                  >
                     Continue
                   </button>
                 </div>
@@ -131,9 +139,13 @@ const Modal = () => {
               </div>
               <div className="modal-cta">
                 <p>Enter your pledge</p>
-                <div className="modal-input-wrapper">
+                <div className="modal-input-wrapper 75">
                   <input type="number" name="pledge" className="input-pledge" />
-                  <button type="button" className="btn continue-btn">
+                  <button
+                    type="button"
+                    className="btn continue-btn"
+                    onClick={submitPledge}
+                  >
                     Continue
                   </button>
                 </div>

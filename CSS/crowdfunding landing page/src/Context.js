@@ -1,14 +1,69 @@
-import { queryByAttribute } from '@testing-library/react';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
   const [isDarkenerOpen, setIsDarkenerOpen] = useState(false);
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [isBookmarkChecked, setIsBookmarkChecked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isThanksOpen, setIsThanksOpen] = useState(false);
+
+  const handleClickDarkener = () => {
+    setIsModalOpen(false);
+    setIsThanksOpen(false);
+    if (isAsideOpen) {
+      changeAside('close');
+    }
+    setIsDarkenerOpen(false);
+  };
+
+  const openThanks = () => {
+    setIsModalOpen(false);
+    setIsDarkenerOpen(true);
+    setIsThanksOpen(true);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const submitPledge = (e) => {
+    const pledge = e.target.previousSibling;
+    const toBePledged = e.target.parentElement.classList[1];
+    const pledgeValue = parseInt(pledge.value);
+
+    if (toBePledged === undefined) {
+      openThanks();
+      return;
+    }
+
+    if (!pledgeValue || pledgeValue === NaN || pledgeValue === null) {
+      pledge.focus();
+      return;
+    }
+
+    if (toBePledged === '25') {
+      if (pledgeValue < 25) {
+        pledge.focus();
+        return;
+      }
+      openThanks();
+    }
+    if (toBePledged === '75') {
+      if (pledgeValue < 75) {
+        pledge.focus();
+        return;
+      }
+      openThanks();
+    }
+  };
+
+  const closeThanks = () => {
+    setIsThanksOpen(false);
+    setIsDarkenerOpen(false);
+  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -53,17 +108,6 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-  // const checkWindowSize = () => {
-  //   changeAside('close');
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('resize', checkWindowSize);
-  //   return () => {
-  //     window.removeEventListener('resize', checkWindowSize);
-  //   };
-  // }, [windowSize]);
-
   return (
     <AppContext.Provider
       value={{
@@ -78,6 +122,12 @@ export const AppProvider = ({ children }) => {
         setIsModalOpen,
         closeModal,
         openModal,
+        openThanks,
+        isThanksOpen,
+        setIsThanksOpen,
+        closeThanks,
+        submitPledge,
+        handleClickDarkener,
       }}
     >
       {children}

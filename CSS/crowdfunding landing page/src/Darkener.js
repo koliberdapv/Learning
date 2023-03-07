@@ -1,7 +1,13 @@
 import { useGlobalContext } from './Context';
 
 const Darkener = () => {
-  const { isDarkenerOpen } = useGlobalContext();
-  return <>{isDarkenerOpen && <div className="darkener"></div>}</>;
+  const { isDarkenerOpen, handleClickDarkener } = useGlobalContext();
+  return (
+    <>
+      {isDarkenerOpen && (
+        <div className="darkener" onClick={handleClickDarkener}></div>
+      )}
+    </>
+  );
 };
 export default Darkener;

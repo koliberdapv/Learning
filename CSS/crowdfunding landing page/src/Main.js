@@ -1,8 +1,10 @@
 import mastercraft from './images/logo-mastercraft.svg';
 import About from './About';
 import Bookmark from './Bookmark';
+import { useGlobalContext } from './Context';
 
 const Main = () => {
+  const { openModal } = useGlobalContext();
   return (
     <main className="main-wrapper">
       <section className="cta">
@@ -14,7 +16,7 @@ const Main = () => {
           A beautiful handcrafted monitor stand to reduce neck and eye strain.
         </p>
         <div className="cta-btn-wrapper">
-          <button type="button" className="btn">
+          <button type="button" className="btn" onClick={openModal}>
             Back this project
           </button>
           <Bookmark />
