@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer__content | grid">
           <Logo />
-          <div className="links | grid center no_gap madia_flex">
+          <div className="links | grid center no_gap media_flex">
             <Links />
           </div>
           <Socials />
