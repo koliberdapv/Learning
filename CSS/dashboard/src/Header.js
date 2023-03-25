@@ -1,4 +1,6 @@
 const Header = () => {
+  const app = document.querySelector('.app');
+
   const enableDarkMode = () => {
     document.documentElement.style.colorScheme = 'dark';
   };
