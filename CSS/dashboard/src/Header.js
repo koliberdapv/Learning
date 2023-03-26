@@ -1,35 +1,47 @@
+import { useEffect } from 'react';
+
 const Header = () => {
   const app = document.querySelector('.app');
 
   const enableDarkMode = () => {
     document.documentElement.style.colorScheme = 'dark';
+    document.documentElement.classList.add('darkmode-enabled');
+    document.documentElement.classList.remove('darkmode-disabled');
   };
 
   const disableDarkMode = () => {
     document.documentElement.style.colorScheme = 'light';
+    document.documentElement.classList.remove('darkmode-enabled');
+    document.documentElement.classList.add('darkmode-disabled');
   };
 
-  const handleClick = (e) => {
-    enableDarkMode();
-    const target = e.target;
-    if (target.dataset.type === 'inner-circle') {
-      if (target.parentElement.classList.contains('darkmode-enabled')) {
-        target.parentElement.classList.remove('darkmode-enabled');
-        disableDarkMode();
-        return;
-      }
-      target.parentElement.classList.add('darkmode-enabled');
-      return;
-    }
-
-    if (target.classList.contains('darkmode-enabled')) {
+  const handleClick = () => {
+    const button = document.querySelector('.darkmode-btn');
+    if (button.classList.contains('enabled')) {
       disableDarkMode();
-      target.classList.remove('darkmode-enabled');
+      button.classList.remove('enabled');
       return;
     }
-    target.classList.add('darkmode-enabled');
+    button.classList.add('enabled');
     enableDarkMode();
+    return;
   };
+
+  const checkUserSettings = () => {
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      const button = document.querySelector('.darkmode-btn');
+      button.classList.add('enabled');
+      enableDarkMode();
+    }
+  };
+
+  useEffect(() => {
+    checkUserSettings();
+  }, []);
+
   return (
     <header className="header">
       <div className="container">
