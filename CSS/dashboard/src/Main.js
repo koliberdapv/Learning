@@ -10,8 +10,8 @@ const Main = () => {
     <main className="main">
       <div className="container">
         <h2 className="main__title">overview - today</h2>
-        <section className="main__content | grid">
-          <div className="main__content_card | grid">
+        <section className="main__content | grid gap_15">
+          <div className="main__content_card | grid gap_15">
             <div className="main__content_card_title | flex side_to_side centered">
               <p>page views</p>
               <picture>
@@ -21,7 +21,7 @@ const Main = () => {
             <div className="main__content_card_info | flex side_to_side centered">
               <p className="card_info_numbers">87</p>
               <div
-                className="main__content_card_info_trend | flex"
+                className="main__content_card_info_trend | flex gap_5"
                 dataset-dynamic="increase"
               >
                 <picture className="grid">
@@ -34,7 +34,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="main__content_card | grid">
+          <div className="main__content_card | grid gap_15">
             <div className="main__content_card_title | flex side_to_side centered">
               <p>likes</p>
               <picture>
@@ -44,7 +44,7 @@ const Main = () => {
             <div className="main__content_card_info | flex side_to_side centered">
               <p className="card_info_numbers">52</p>
               <div
-                className="main__content_card_info_trend | flex"
+                className="main__content_card_info_trend | flex gap_5"
                 dataset-dynamic="decrease"
               >
                 <picture className="grid">
@@ -57,7 +57,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="main__content_card | grid">
+          <div className="main__content_card | grid gap_15">
             <div className="main__content_card_title | flex side_to_side centered">
               <p>likes</p>
               <picture>
@@ -67,7 +67,7 @@ const Main = () => {
             <div className="main__content_card_info | flex side_to_side centered">
               <p className="card_info_numbers">5462</p>
               <div
-                className="main__content_card_info_trend | flex"
+                className="main__content_card_info_trend | flex gap_5"
                 dataset-dynamic="increase"
               >
                 <picture className="grid">
@@ -80,7 +80,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="main__content_card | grid">
+          <div className="main__content_card | grid gap_15">
             <div className="main__content_card_title | flex side_to_side centered">
               <p>profile views</p>
               <picture>
@@ -90,7 +90,7 @@ const Main = () => {
             <div className="main__content_card_info | flex side_to_side centered">
               <p className="card_info_numbers">52k</p>
               <div
-                className="main__content_card_info_trend | flex"
+                className="main__content_card_info_trend | flex gap_5"
                 dataset-dynamic="increase"
               >
                 <picture className="grid">
@@ -103,7 +103,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="main__content_card | grid">
+          <div className="main__content_card | grid gap_15">
             <div className="main__content_card_title | flex side_to_side centered">
               <p>retweets</p>
               <picture>
@@ -113,7 +113,7 @@ const Main = () => {
             <div className="main__content_card_info | flex side_to_side centered">
               <p className="card_info_numbers">117</p>
               <div
-                className="main__content_card_info_trend | flex"
+                className="main__content_card_info_trend | flex gap_5"
                 dataset-dynamic="increase"
               >
                 <picture className="grid">
@@ -126,7 +126,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="main__content_card | grid">
+          <div className="main__content_card | grid gap_15">
             <div className="main__content_card_title | flex side_to_side centered">
               <p>likes</p>
               <picture>
@@ -136,7 +136,7 @@ const Main = () => {
             <div className="main__content_card_info | flex side_to_side centered">
               <p className="card_info_numbers">507</p>
               <div
-                className="main__content_card_info_trend | flex"
+                className="main__content_card_info_trend | flex gap_5"
                 dataset-dynamic="increase"
               >
                 <picture className="grid">
@@ -149,7 +149,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="main__content_card | grid">
+          <div className="main__content_card | grid gap_15">
             <div className="main__content_card_title | flex side_to_side centered">
               <p>likes</p>
               <picture>
@@ -159,7 +159,7 @@ const Main = () => {
             <div className="main__content_card_info | flex side_to_side centered">
               <p className="card_info_numbers">107</p>
               <div
-                className="main__content_card_info_trend | flex"
+                className="main__content_card_info_trend | flex gap_5"
                 dataset-dynamic="decrease"
               >
                 <picture className="grid">
@@ -172,7 +172,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="main__content_card | grid">
+          <div className="main__content_card | grid gap_15">
             <div className="main__content_card_title | flex side_to_side centered">
               <p>total views</p>
               <picture>
@@ -182,7 +182,7 @@ const Main = () => {
             <div className="main__content_card_info | flex side_to_side centered">
               <p className="card_info_numbers">1407</p>
               <div
-                className="main__content_card_info_trend | flex"
+                className="main__content_card_info_trend | flex gap_5"
                 dataset-dynamic="decrease"
               >
                 <picture className="grid">

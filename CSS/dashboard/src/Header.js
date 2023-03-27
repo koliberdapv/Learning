@@ -45,15 +45,15 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container">
-        <div className="header__content | grid">
-          <div className="header__title | grid">
+        <div className="header__content | grid gap_15">
+          <div className="header__title | grid gap_5">
             <h1>social media dashboard</h1>
             <p className="info_text">
               total follower: <span>23,004</span>
             </p>
           </div>
           <div className="divider"></div>
-          <div className="header__buttons  | flex side_to_side centered">
+          <div className="header__buttons  | flex side_to_side centered gap_10">
             <p className="info_text">dark mode</p>
             <button
               className="darkmode-btn | flex centered"

@@ -9,19 +9,22 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="container">
-        <div className="hero__content | grid">
-          <article className="hero__card | grid" dataset-card="facebook">
-            <div className="hero__card_title | flex">
+        <div className="hero__content | grid gap_15">
+          <article className="hero__card | grid gap_15" dataset-card="facebook">
+            <div className="hero__card_title | flex gap_5">
               <picture>
                 <img src={facebook} alt="facebook" />
               </picture>
               <p>@nathanf</p>
             </div>
-            <div className="hero__card_followers | grid">
+            <div className="hero__card_followers | grid gap_5">
               <span>1987</span>
               <p>followers</p>
             </div>
-            <div className="hero__card_trend | flex" dataset-dynamic="increase">
+            <div
+              className="hero__card_trend | flex gap_5"
+              dataset-dynamic="increase"
+            >
               <picture className="grid">
                 <img src={arrowUp} alt="arrow up" />
               </picture>
@@ -31,18 +34,21 @@ const Hero = () => {
             </div>
           </article>
 
-          <article className="hero__card | grid" dataset-card="twitter">
-            <div className="hero__card_title | flex">
+          <article className="hero__card | grid gap_15" dataset-card="twitter">
+            <div className="hero__card_title | flex gap_5">
               <picture>
                 <img src={twitter} alt="twitter" />
               </picture>
               <p>@nathanf</p>
             </div>
-            <div className="hero__card_followers | grid">
+            <div className="hero__card_followers | grid gap_5">
               <span>1044</span>
               <p>followers</p>
             </div>
-            <div className="hero__card_trend | flex" dataset-dynamic="increase">
+            <div
+              className="hero__card_trend | flex gap_5"
+              dataset-dynamic="increase"
+            >
               <picture className="grid">
                 <img src={arrowUp} alt="arrow up" />
               </picture>
@@ -52,18 +58,24 @@ const Hero = () => {
             </div>
           </article>
 
-          <article className="hero__card | grid" dataset-card="instagram">
-            <div className="hero__card_title | flex">
+          <article
+            className="hero__card | grid gap_15"
+            dataset-card="instagram"
+          >
+            <div className="hero__card_title | flex gap_5">
               <picture>
                 <img src={instagram} alt="instagram" />
               </picture>
               <p>@realnathanf</p>
             </div>
-            <div className="hero__card_followers | grid">
+            <div className="hero__card_followers | grid gap_5">
               <span>11k</span>
               <p>followers</p>
             </div>
-            <div className="hero__card_trend | flex" dataset-dynamic="increase">
+            <div
+              className="hero__card_trend | flex gap_5"
+              dataset-dynamic="increase"
+            >
               <picture className="grid">
                 <img src={arrowUp} alt="arrow up" />
               </picture>
@@ -73,18 +85,21 @@ const Hero = () => {
             </div>
           </article>
 
-          <article className="hero__card | grid" dataset-card="youtube">
-            <div className="hero__card_title | flex">
+          <article className="hero__card | grid gap_15" dataset-card="youtube">
+            <div className="hero__card_title | flex gap_5">
               <picture>
                 <img src={youtube} alt="youtube" />
               </picture>
               <p>Nathan F.</p>
             </div>
-            <div className="hero__card_followers | grid">
+            <div className="hero__card_followers | grid gap_5">
               <span>8239</span>
               <p>subscribers</p>
             </div>
-            <div className="hero__card_trend | flex" dataset-dynamic="decrease">
+            <div
+              className="hero__card_trend | flex gap_5"
+              dataset-dynamic="decrease"
+            >
               <picture className="grid">
                 <img src={arrowDown} alt="arrow up" />
               </picture>
