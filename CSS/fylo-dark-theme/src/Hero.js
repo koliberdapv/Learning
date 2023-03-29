@@ -1,4 +1,6 @@
 import hero_img from './images/illustration-intro.png';
+import bg from './images/bg-curvy-mobile.svg';
+import bg_desktop from './images/bg-curvy-desktop.svg';
 
 const Hero = () => {
   return (
@@ -10,7 +12,7 @@ const Hero = () => {
           </picture>
           <article className="hero__content_info | grid gap_15">
             <h1 className="hero__content_info_title">
-              All your files in one secure location, accessile anywhere.
+              All your files in one secure location, accessible anywhere.
             </h1>
             <p className="hero__content_info_text">
               Fylo stores all your most important files in one secure location.
@@ -20,6 +22,10 @@ const Hero = () => {
             <button className="hero__content_info_btn">get started</button>
           </article>
         </div>
+      </div>
+      <div className="background">
+        <img src={bg} alt="" className="mobile" />
+        <img src={bg_desktop} alt="" className="desktop" />
       </div>
     </section>
   );
