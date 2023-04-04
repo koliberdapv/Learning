@@ -1,6 +1,7 @@
 import Header from './Header';
 import Hero from './Hero';
 import Main from './Main';
+import Cta from './Cta.js';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Hero />
       <Main />
+      <Cta />
     </>
   );
 }

@@ -13,9 +13,9 @@ const Main = () => {
               <img src={access} alt="a computer with a phone aside" />
             </picture>
             <div className="main__content_info_text | grid gap_15">
-              <h2 className="main__content_info_text_header">
+              <h3 className="main__content_info_text_header">
                 Access your files anywhere
-              </h2>
+              </h3>
               <p>
                 The ability to use a smartphone, tablet, or computer to access
                 your account means your files follow you everywhere.
@@ -28,9 +28,9 @@ const Main = () => {
               <img src={security} alt="a shield with a checkmark" />
             </picture>
             <div className="main__content_info_text | grid gap_15">
-              <h2 className="main__content_info_text_header">
+              <h3 className="main__content_info_text_header">
                 Security you can trust
-              </h2>
+              </h3>
               <p>
                 2-factor authentification and user-controlled encryption are
                 just a couple of the security features we allow to help secure
@@ -44,9 +44,9 @@ const Main = () => {
               <img src={collaboration} alt="a clock with a people next to it" />
             </picture>
             <div className="main__content_info_text | grid gap_15">
-              <h2 className="main__content_info_text_header">
+              <h3 className="main__content_info_text_header">
                 Real-time collaboration
-              </h2>
+              </h3>
               <p>
                 Securely share files and folders with friends, family and
                 colleagues for live collaboration. No email attachments
@@ -63,9 +63,9 @@ const Main = () => {
               />
             </picture>
             <div className="main__content_info_text | grid gap_15">
-              <h2 className="main__content_info_text_header">
+              <h3 className="main__content_info_text_header">
                 Store any type of file
-              </h2>
+              </h3>
               <p>
                 Whether you're sharing holidays photos or work documents, Fylo
                 has you covered allowing for all file types to be securely

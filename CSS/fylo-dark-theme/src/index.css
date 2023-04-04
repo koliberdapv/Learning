@@ -21,6 +21,8 @@
   --fs-text: 0.9375rem;
   --fs-hero-title: 1.5rem;
   --fs-hero-title-desktop: 2.15rem;
+  --fs-cta-title: 1.25rem;
+  --fs-cta-title-desktop: 1.75rem;
   --fs-main-title: 1.15rem;
 
   --clr-dark-blue: hsl(217, 28%, 15%);
@@ -92,7 +94,7 @@ img {
 
 .container {
   width: 85%;
-  max-width: 900px;
+  max-width: 1000px;
   margin-inline: auto;
 }
 
@@ -269,5 +271,71 @@ img {
 
   .main__content_info {
     align-content: space-between;
+  }
+}
+
+.cta {
+  background-color: var(--clr-main-bg);
+  text-align: left;
+  padding: 3rem 0;
+}
+
+.cta__content_info_header {
+  color: var(--clr-white);
+  font-size: var(--fs-cta-title);
+}
+
+.cta__content_info_link {
+  justify-self: left;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-cta-cyan);
+}
+
+.arrow img {
+  justify-self: center;
+}
+
+.cta__content_info_link a {
+  color: var(--clr-cta-cyan);
+  text-decoration: none;
+}
+
+.cta__content_info_link:hover,
+.cta__content_info_link:focus {
+  cursor: pointer;
+  border-bottom: 1px solid var(--clr-white);
+}
+
+.cta__content_info_link:hover a,
+.cta__content_info_link:focus a {
+  color: var(--clr-white);
+}
+
+.cta__content_info_link:hover .arrow-normal,
+.cta__content_info_link:focus .arrow-normal,
+.arrow-hover {
+  display: none;
+}
+
+.cta__content_info_link:hover .arrow-hover,
+.cta__content_info_link:focus .arrow-hover {
+  display: flex;
+}
+
+@media screen and (min-width: 850px) {
+  .cta__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta__content_info {
+    align-self: flex-end;
+    margin-bottom: 2rem;
+  }
+
+  .cta__content_info_header {
+    font-size: var(--fs-cta-title-desktop);
+    line-height: 2.5rem;
+    max-width: 20rem;
+    letter-spacing: 1px;
   }
 }
