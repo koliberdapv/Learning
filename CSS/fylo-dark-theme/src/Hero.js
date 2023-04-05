@@ -19,7 +19,7 @@ const Hero = () => {
               Access them wherever you need, share and colaborate with friends,
               family, and co-workers.
             </p>
-            <button className="hero__content_info_btn">get started</button>
+            <button className="hero__content_info_btn btn">get started</button>
           </article>
         </div>
       </div>
