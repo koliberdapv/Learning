@@ -4,6 +4,7 @@ import Main from './Main';
 import Cta from './Cta';
 import Testimonials from './Testimonials';
 import Email from './Email';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Cta />
       <Testimonials />
       <Email />
+      <Footer />
     </>
   );
 }

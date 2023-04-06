@@ -7,7 +7,7 @@ const Header = () => {
         <picture className="header__content_logo">
           <img src={logo} alt="Fylo" />
         </picture>
-        <ul className="header__content_links | flex gap_10">
+        <ul className="header__content_links links | flex gap_10">
           <li>
             <a href="#">features</a>
           </li>
