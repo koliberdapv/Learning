@@ -16,7 +16,7 @@ const Footer = () => {
               id="geo"
               className="footer__content_info_single_line | grid gap_15"
             >
-              <picture dataset-name="geo">
+              <picture>
                 <img src={geo} alt="location mark" />
               </picture>
               <p>

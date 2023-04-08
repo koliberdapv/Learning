@@ -22,7 +22,7 @@ const Cta = () => {
               Securely share files and folders with friends, family and
               colleagues for live collaboration. No email attachments required.
             </p>
-            <div className="cta__content_info_link | flex gap_5">
+            <div className="cta__content_info_link | flex gap_5" role="button">
               <a href="#">See how Fylo works</a>
               <picture className="arrow | flex">
                 <img src={arrow} alt="arrow rigth" className="arrow-normal" />
